@@ -39,7 +39,7 @@ export default function Footer() {
         <p className={`text-lg text-white `}>
           {dictionary.landingPage.footer.description}
         </p>
-        <p className={`text-xs text-white `}>Denizli, Türkiye</p>
+        <p className={`text-xs text-white `}></p>
       </div>
       <div className="col-span-full lg:col-span-6 flex flex-col justify-end items-start md:max-w-lg gap-5 w-full mx-auto mt-5 md:mt-0">
         <div className="flex items-center justify-center gap-2 w-full ">
@@ -75,7 +75,7 @@ export default function Footer() {
       </div>
       <div className="col-span-full flex flex-col justify-end items-center py-5">
       <p className={`${acme.className} text-sm text-white`}>© 2024 Laodicea Solutions. All rights reserved.</p>
-        <p className={`${acme.className} text-sm text-white`}>made with ❤️ by who love their job</p>
+        <p className={`${acme.className} text-sm text-white`}>made with ❤️</p>
       </div>
     </section>
   )

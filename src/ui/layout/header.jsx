@@ -7,7 +7,8 @@ import Logo from "./logo";
 import Navbar from "./navbar";
 import classNames from "classnames";
 
-export function Header() {
+export function Header(props) {
+  const { fixed } = props;
   const headerRef = useRef();
   const [sticky, setSticky] = useState(false);
   useEffect(() => {
@@ -27,13 +28,13 @@ export function Header() {
   return (
     <header
       className={classNames('w-full z-50 transition ease-linear duration-700', {
-        'sticky top-0 shadow-xl': sticky,
-        'absolute top-8 md:top-16': !sticky,
+        'sticky top-0 shadow-xl': sticky || fixed,
+        'absolute top-8 md:top-16': !sticky && !fixed,
       })}
       ref={headerRef} >
       <div className={classNames(' py-5 px-5 bg-gray-100 flex justify-between items-center', {
-        'md:mx-auto my-auto shadow-md rounded-3xl container': !sticky,
-        
+        'md:mx-auto my-auto shadow-md rounded-3xl container': !sticky && !fixed,
+
       })}>
         <Logo />
         <Navbar />

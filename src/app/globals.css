@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {}
 
 @layer utilities {
   ::-webkit-scrollbar {
@@ -23,4 +24,106 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #60CE70;
   }
+}
+
+@layer components {
+  .sticker {
+    clip-path: polygon(0% 0%,
+        100% 0%,
+        100% calc(100% - 30px),
+        calc(100% - 60px) 100%,
+        0% 100%);
+  }
+
+  .sticker:before {
+    content: "";
+    position: absolute;
+    background-color: #e7e7e7;
+    width: 60px;
+    height: 60px;
+  }
+
+  .up-right {
+    clip-path: polygon(0% 0%,
+        calc(100% - 30px) 0%,
+        100% 60px,
+        100% 100%,
+        0% 100%);
+  }
+
+  .up-right:before {
+    right: -29px;
+    top: -18px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 3px -3px 6px 1px #0000009e;
+    rotate: 132deg;
+  }
+
+  .down-right {
+    clip-path: polygon(0% 0%,
+        100% 0%,
+        100% calc(100% - 30px),
+        calc(100% - 60px) 100%,
+        0% 100%);
+  }
+
+  .down-right:before {
+    right: -11px;
+    bottom: -26px;
+    border-top-left-radius: 10px;
+    box-shadow: 0px 4px 6px 1px #0000009e;
+    rotate: 32deg;
+  }
+
+  .up-left {
+    clip-path: polygon(0% 30px, 60px 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .up-left:before {
+    left: -15px;
+    top: -29px;
+    border-top-left-radius: 10px;
+    box-shadow: 3px -5px 6px 1px #0000009e;
+    rotate: -137deg;
+  }
+
+  .down-left {
+    clip-path: polygon(0% 0%,
+        100% 0%,
+        100% 100%,
+        60px 100%,
+        0% calc(100% - 20px));
+  }
+
+  .down-left:before {
+    left: -10px;
+    bottom: -34px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 3px -5px 6px 1px #0000009e;
+    rotate: -137deg;
+  }
+
+  .zig-zag{
+    display: inline-flex;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80'><polygon points='40 0,0 40,40 80,80 40' style='fill:red;fill-rule:nonzero;'></polygon></svg>");
+    margin: 4px;
+    width: 4px;
+    min-height: 16px;
+    padding: 20px;
+    background-size: 20px 20px;
+    background-repeat: round round;
+    position: relative;
+    opacity: 0.7;
+  }
+  .zig-zag:after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: red;
+    z-index: -1;
+  }
+
 }

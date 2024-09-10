@@ -1,8 +1,12 @@
+'use client';
+
 import { ApplicationContext } from '@/context/applicationContext';
+import { postContactUs } from '@/lib/action';
+import classNames from 'classnames';
 import { Orbitron } from 'next/font/google'
 import Image from 'next/image';
 import Link from 'next/link';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 const orbitron = Orbitron({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] });
 const developmentTypes = [
@@ -22,12 +26,14 @@ const developmentTypes = [
 
 export default function ContactUsForm() {
   const { dictionary } = useContext(ApplicationContext);
+  const [selectedType, setSelectedType] = useState('');
   return (
-    <form className={`${orbitron.className} flex flex-col justify-start items-start gap-5 whitespace-pre-wrap overflow-x-clip`}>
+    <form className={`${orbitron.className} flex flex-col justify-start items-start gap-5 whitespace-pre-wrap overflow-x-clip`} action={postContactUs}>
       <h6 className={` text-[#3f3f3f] text-2xl md:text-3xl whitespace-pre pl-2 md:pl-0`}>{dictionary.landingPage.contactUs.WCDFY}</h6>
       <div className="grid grid-cols-12 gap-2 md:gap-10">
         <div className="col-span-full lg:col-span-6 flex flex-col justify-start items-center md:items-start gap-5">
           <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-10 mb-5">
+            <input className="hidden" name="developmenType" value={selectedType} />
             {
               developmentTypes.map((type) => (
                 <button
@@ -35,7 +41,13 @@ export default function ContactUsForm() {
                   type="button"
                   role="button"
                   name="productType"
-                  className="px-8 py-4 border border-gray-200 rounded-3xl text-lg text-[#3f3f3f] hover:text-white hover:bg-[#3f3f3f] focus:bg-[#3f3f3f] focus:text-white"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setSelectedType(type.name);
+                  }}
+                  className={classNames('px-8 py-4 border border-gray-200 rounded-3xl text-lg text-[#3f3f3f] hover:text-white hover:bg-[#3f3f3f] focus:bg-[#3f3f3f] focus:text-white', {
+                    'bg-[#3f3f3f] text-white': selectedType === type.name
+                  })}
                 >
                   {dictionary.landingPage.contactUs[type.name]}
                 </button>
@@ -67,7 +79,6 @@ export default function ContactUsForm() {
           <button
             type="submit"
             role="form"
-            name="productType"
             className="px-8 py-4 border border-gray-200 rounded-3xl text-lg text-white hover:shadow-lg bg-secondary focus:bg-primary"
           >
             <Image
