@@ -25,7 +25,7 @@ const socialMedias = [
 ];
 
 export default function Footer() {
-  const { dictionary, } = useContext(ApplicationContext);
+  const { dictionary, language } = useContext(ApplicationContext);
 
   return (
     <section className="w-full min-h-[440px] grid grid-cols-12 bg-center bg-contain bg-no-repeat bg-[#24A556] bg-[url('/background/illustration-footer.png')] p-2 md:p-0" id="footer">
@@ -45,7 +45,10 @@ export default function Footer() {
         <div className="flex items-center justify-center gap-2 w-full ">
           {
             navbarItems.map((item) => (
-              <Link key={item.label} href={item.path} className="text-xl text-white w-full ">
+              <Link
+                key={item.label}
+                href={`/${language}/${item.path}`}
+                className="text-xl text-white w-full ">
                 {dictionary.landingPage.header.navbar[item.label]}
               </Link>
             ))
@@ -74,7 +77,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="col-span-full flex flex-col justify-end items-center py-5">
-      <p className={`${acme.className} text-sm text-white`}>© 2024 Laodicea Solutions. All rights reserved.</p>
+        <p className={`${acme.className} text-sm text-white`}>© 2024 Laodicea Solutions. All rights reserved.</p>
         <p className={`${acme.className} text-sm text-white`}>made with ❤️</p>
       </div>
     </section>

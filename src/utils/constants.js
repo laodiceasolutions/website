@@ -44,9 +44,33 @@ const projects = [
     tags: ['Web', 'Finance'],
     soon: true,
   },
+];
+
+const whatCanDoWeDoOffers = [
+  {
+    name: 'product-design',
+    label: 'Product Design',
+    cardImageSrc: '/blog/products/all-products.jpeg',
+  },
+  {
+    name: 'ideation-strategy',
+    label: 'Ideation & Strategy',
+    cardImageSrc: '/blog/products/all-products.jpeg',
+  },
+  {
+    name: 'web-and-mobile',
+    label: 'Web and Mobile',
+    cardImageSrc: '/blog/products/all-products.jpeg',
+  },
+  {
+    name: 'embedded-systems',
+    label: 'Embedded Systems',
+    cardImageSrc: '/blog/products/all-products.jpeg',
+  },
 ]
 
 export {
   navbarItems,
-  projects
+  projects,
+  whatCanDoWeDoOffers
 }

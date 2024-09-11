@@ -5,34 +5,20 @@ import { Outfit } from 'next/font/google'
 import Image from "next/image";
 import { useContext } from "react";
 import { ApplicationContext } from "@/context/applicationContext";
+import { whatCanDoWeDoOffers } from "@/utils/constants";
 const outfit = Outfit({ subsets: ["latin"], weight: ['400', '500', '600', '700', '800', '900'] });
 
-const menuItems = [
-  {
-    name: 'productDesign',
-    label: 'Product Design',
-  },
-  {
-    name: 'ideationStrategy',
-    label: 'Ideation & Strategy',
-  },
-  {
-    name: 'webAndMobile',
-    label: 'Web and Mobile',
-  },
-  {
-    name: 'embeddedSystems',
-    label: 'Embedded Systems'
-  },
-]
-
 function OffersMenu() {
-  const { dictionary } = useContext(ApplicationContext);
+  const { dictionary, language } = useContext(ApplicationContext);
   return (
     <ul className="h-full flex flex-col items-end justify-center list-none divide-y-2 divide-gray-400">
       {
-        menuItems.map((item) => (
-          <Link key={item.name} href={item.name} className={`w-full max-w-md px-2 py-5 text-gray-100 hover:text-primary focus:text-primary text-2xl ${outfit.className}`}>
+        whatCanDoWeDoOffers.map((item) => (
+          <Link
+            key={item.name}
+            href={`/${language}/blog/what-we-can-do-for-you/${item.name}`}
+            className={`w-full max-w-md px-2 py-5 text-gray-100 hover:text-primary focus:text-primary text-2xl ${outfit.className}`}
+          >
             <h4>{dictionary.landingPage.project.WCDFY[item.name]}</h4>
           </Link>
         ))

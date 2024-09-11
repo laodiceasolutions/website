@@ -1,18 +1,15 @@
 'use client';
 
 import { ApplicationContext } from "@/context/applicationContext";
-import Footer from "@/ui/layout/footer";
-import { Header } from "@/ui/layout/header";
 import Link from "next/link";
 import { useContext } from "react";
 
-export default function NotFound(params) {
+export default function NotFound(props) {
   const { language } = useContext(ApplicationContext);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between relative">
-      <Header fixed />
+    <div className="flex justify-center items-center min-h-[60vh] h-full">
       <div className="mt-4 h-[20vh] flex flex-col justify-center items-center gap-2">
-        <h2 className="text-xl font-semibold">404 Project Not Found</h2>
+        <h2 className="text-xl font-semibold">404 Blog Not Found</h2>
         <Link
           href={`/${language}`}
           className="text-black hover:text-primary focus:text-primary text-2xl"
@@ -20,7 +17,6 @@ export default function NotFound(params) {
           Home Page
         </Link>
       </div>
-      <Footer />
-    </main>
+    </div>
   )
 }

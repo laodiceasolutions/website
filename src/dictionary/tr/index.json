@@ -26,10 +26,10 @@
       "lsFINANCE_Detail_Large": "<h1 class=\"text-5xl font-medium col-span-full\">LS Finance</h1>             <p class=\"col-span-full\">               LS Finance, küçük ve orta ölçekli işletmeler dahil olmak üzere her büyüklükteki işletmelerin finansal operasyonlarını etkin bir şekilde izlemelerine, yönetmelerine ve düzenlemelerine yardımcı olmak için tasarlanmış kapsamlı bir finans yönetim çözümüdür. LS Finance ile işletmeler, muhasebe işlemlerini otomatikleştirebilir, nakit akışlarını izleyebilir, ayrıntılı bütçeler oluşturabilir ve finansal sağlıklarını daha iyi anlamak için özelleştirilmiş raporlar oluşturabilirler.             </p>             <h5 class=\"col-span-full text-2xl font-medium\">LS Finance Nasıl Çalışır</h5>             <p class=\"col-span-full\">               Bu ürün, işletmelerin finansal verilerini tek bir platforma entegre etmelerini sağlar. Gelir takibinden gider yönetimine kadar, LS Finance günlük işlemleri verimli bir şekilde yönetmek için gerekli araçları sunar. İşletmeler özel bütçeler oluşturabilir, gerçekleşen harcamaları tahminlerle karşılaştırabilir ve gerçek zamanlı ayarlamalar yaparak hedeflerine ulaşabilirler. Ayrıca, otomatik raporlama özellikleri, kar/zarar tabloları, bilanço ve nakit akışı özetleri gibi finansal raporların birkaç tıklamayla oluşturulmasını sağlar.             </p>             <p class=\"col-span-full\">               Ana Özellikler:             </p>             <ol class=\"col-span-full list-decimal ml-4\">               <li>                 <p>                   <strong>Otomatik Muhasebe:</strong> Otomatik muhasebe fonksiyonları ile manuel veri girişini azaltır.                 </p>               </li>               <li>                 <p>                   <strong>Bütçe Yönetimi:</strong> Gerçek zamanlı olarak bütçeler oluşturmanıza, yönetmenize ve izlemenize yardımcı olur.                 </p>               </li>               <li>                 <p>                   <strong>Gider Takibi:</strong> Özelleştirilebilir kategorilerle ayrıntılı gider analizleri sunar.                 </p>               </li>               <li>                 <p>                   <strong>Finansal Raporlar:</strong> Özelleştirilebilir raporlama aracı ile finansal tabloların otomatik olarak oluşturulmasını sağlar.                 </p>               </li>               <li>                 <p>                   <strong>Çoklu Para Birimi Desteği:</strong> Uluslararası işlemleri kolaylaştırarak çeşitli para birimlerinde işlemleri yönetir.                 </p>               </li>             </ol>             <h5 class=\"col-span-full text-2xl font-medium\">               Benzer Ürünlerle Karşılaştırma             </h5>             <p class=\"col-span-full\">               Geleneksel muhasebe yazılımlarına kıyasla, LS Finance çok daha sezgisel bir kullanıcı deneyimi sunar ve gerçek zamanlı iş birliğine olanak tanır. Küçük işletmeler için karmaşık olabilen daha büyük ERP sistemlerinin aksine, LS Finance sadece finansal işlemlere odaklanarak hafif, kolay uygulanabilir ve hızlı kullanılabilir olmasını sağlar. Rakipler daha geniş yazılım paketleri sunabilir, ancak LS Finance, temel finansal görevleri özelleştirip sadeleştirme konusunda uzmanlaşarak, verimli ve güçlü bir çözüm arayan işletmeler için mükemmel bir seçimdir.             </p>",
       "WCDFY": {
         "title": "Sizin için yapabileceklerimiz",
-        "productDesign": "Ürün Tasarımı",
-        "ideationStrategy": "Ürün Üretimi & Strateji",
-        "webAndMobile": "Web ve Mobil",
-        "embeddedSystems": "Gömülü Sistemler"
+        "product-design": "Ürün Tasarımı",
+        "ideation-strategy": "Ürün Üretimi & Strateji",
+        "web-and-mobile": "Web ve Mobil",
+        "embedded-systems": "Gömülü Sistemler"
       }
     },
     "contactUs": {
@@ -43,6 +43,69 @@
     },
     "footer": {
       "description": "Denizli'deki tarihi Laodikya'dan ilham alarak, müşterilerimizin ihtiyaçlarına özel yazılım çözümleri sunuyoruz. CRM sistemleri ve kurumsal yazılımlar konusundaki deneyimimizle, fikirlerinizi gerçeğe dönüştürmek için buradayız."
+    }
+  },
+  "common": {
+    "readMore": "Devamını Oku"
+  },
+  "blog": {
+    "WCDFY": {
+      "product-design": {
+        "summary": "Ladicea Solutions ürün tasarımını nasıl yapıyor? Bu konuda daha önce yapılan tasarımlar neler?",
+        "title": "Size Ürün Tasarımı Hakkında Ne Sunabiliriz?"
+      },
+      "embedded-systems": {
+        "summary": "",
+        "title": "Revolutionizing Your Workflow: AI-Powered Solutions for Modern Businesses"
+      },
+      "ideation-strategy": {
+        "summary": "",
+        "title": "Sizin İçin Ürün Üretme ve Strateji Alanında Neler Yapabiliriz?",
+        "section11": "Laodicea Solutions olarak, her başarılı ürün veya hizmetin arkasında güçlü bir fikrin olduğuna inanıyoruz. Ancak, bu fikri geçici bir düşünceden somut ve uygulanabilir bir plana dönüştürmek kolay değildir. İşte bu noktada fikir üretme ve strateji geliştirme süreci devreye giriyor. Bir projenin bu aşaması, çoğunlukla en kritik safha olarak kabul edilir; çünkü her şeyin temelini burada atıyoruz.",
+        "section12": "İster yeni bir girişim olarak kendi pazarınızı yaratmak isteyin, isterse mevcut bir işinizi büyütmek ve yeni fırsatlar aramak amacında olun, biz size vizyonunuzu tanımlamanıza, geliştirilmesine ve somut bir plana dönüştürülmesine yardımcı oluyoruz. Şimdi, fikir üretme ve strateji alanında sizin için neler yapabileceğimizi detaylıca inceleyelim.",
+        "subtitle2": "Vizyonunuzu Derinlemesine Anlamak: Başarının İlk Adımı",
+        "section21": "Fikir üretme sürecimize şu temel soruyla başlıyoruz: <i>Başarmak istediğiniz şey nedir?</i> Basit bir soru gibi görünse de, hedeflerinizi açık bir şekilde tanımlamak strateji oluşturmanın ilk ve en önemli adımıdır. Hazır, standart çözümler sunmak yerine, işletmenizin benzersiz zorluklarını, bulunduğunuz sektörün koşullarını ve uzun vadeli hedeflerinizi derinlemesine anlamaya çalışıyoruz.",
+        "section22": "Bu aşamada amaç, keşif sürecidir. Sizinle birlikte şirketinizin genel durumunu ele alıyoruz. Karşılaştığınız problemler neler? Hangi çözümleri hayal ediyorsunuz? Belki bir fikir üzerinde çalışıyorsunuz ancak bunu daha belirgin bir hale getirmek istiyorsunuz. Ya da belki de yeni bir pazara girme konusunda yardıma ihtiyacınız var. Ekibimiz, bu süreçte sizinle beyin fırtınası yaparak en uygun fikirleri ortaya çıkarır ve onları geliştirir.",
+        "section23": "Fikir üretme aşaması bir değerlendirme süreci değil, tam tersine tüm olasılıkları masaya yatırdığımız bir aşamadır. Her öneri değerli olup, bu sürecin sonunda elimizde stratejiye dönüşebilecek bir fikir havuzu oluşmuş olur.",
+        "subtitle3": "Pazar Araştırması ve Rakip Analizi: Rekabet Alanını Anlamak",
+        "section31": "Vizyonunuz ve fikirleriniz netleştikten sonra, bunları gerçek dünyadaki koşullarla uyumlu hale getirme aşamasına geçiyoruz. Gireceğiniz pazar ve karşılaşacağınız rakipler, stratejinizi nasıl şekillendireceğimizi doğrudan etkiler",
+        "section32": "Derinlemesine pazar araştırması yaparak şu sorulara yanıt arıyoruz:",
+        "list31": "<strong>Trendler:</strong> Sektörünüzde şu an ne gibi değişimler oluyor? Yeni teknolojiler veya tüketici davranışlarında farklılaşmalar var mı?",
+        "list32": "<strong>Fırsatlar:</strong> Pazarda, ürün veya hizmetinizin doldurabileceği bir boşluk var mı?",
+        "list33": "<strong>Tehditler:</strong> Rakipleriniz kimler ve neler yapıyorlar? Onlardan nasıl farklılaşabilirsiniz?",
+        "section33": "Bu verilerle birlikte, fikrinizi yeniden değerlendirir ve stratejinizi şekillendiririz. Stratejinizin sadece vizyoner değil, aynı zamanda gerçek dünya koşullarına uygun olmasını sağlarız. İster rekabetin yoğun olduğu bir sektörde olun, ister yeni gelişen bir pazarda, nerede durduğunuzu anlamak uzun vadeli başarı için kritiktir.",
+        "subtitle4": "Yol Haritası Oluşturmak: Vizyonunuzu Aksiyona Dönüştürmek",
+        "section41": "İyi bir strateji, fikrinizi somut ve uygulanabilir bir plana dönüştürür. Fikrinizi netleştirdikten ve pazar verilerini topladıktan sonra, sizinle birlikte detaylı bir yol haritası oluşturuyoruz. Bu yol haritası, projenizin geliştirilmesinden piyasaya sunulmasına kadar her aşamayı kapsar.",
+        "section42": "Bu aşamada şu kritik sorulara yanıt veriyoruz:",
+        "list41": "Hangi kilometre taşlarına ulaşılmalı?",
+        "list42": "Hangi kaynaklar (zaman ve finansman) gerekli?",
+        "list43": "Sürecin her aşamasında kimler sorumlu olacak?",
+        "list44": "Her aşamada başarı nasıl tanımlanacak?",
+        "section43": "Her projenin birçok hareketli parçası vardır ve net bir plan olmadan en iyi fikirler bile başarısız olabilir. Stratejimiz, ürün geliştirme, pazarlama veya müşteri etkileşimi gibi her yönün uyum içinde çalışmasını ve hedeflerinize ulaşmanızı sağlar.",
+        "section44": "Ayrıca stratejinizin esnek olmasını sağlarız. Pazarlar değişir, müşteri ihtiyaçları değişir ve bazen en iyi planlar bile revizyona ihtiyaç duyar. Sürekli gelişime dayalı yaklaşımımızla, stratejinizin zamanla büyüyüp adapte olabilecek bir plan olmasını sağlıyoruz.",
+        "subtitle5": "Yenilikçilik ve Yaratıcılık: Hep Bir Adım Önde Kalmak",
+        "section51": "Fikir üretme aşamasında yaratıcılık kilit rol oynar. Ancak yenilikçilik sadece başlangıçtaki fikirlerde kalmamalıdır. Strateji geliştirme aşamasında da rakiplerinizin önüne geçmenizi sağlayacak yaratıcı çözümler üretiyoruz. Yeni teknolojilerin entegrasyonu ya da hedef kitlenizle farklı yollarla etkileşim kurma gibi yenilikçi yaklaşımlar sunarak, stratejinizi sadece uygulanabilir değil, aynı zamanda rakiplerinizden farklı bir konuma getiriyoruz.",
+        "section52": "Düzenli kontrol ve değerlendirmeler yaparak ivmeyi kaybetmeden süreci ileriye taşırız. Ekibimiz sürekli olarak sizinle iletişimde kalır ve yeni fırsatlar ya da iyileştirme yolları ortaya çıktıkça bunları stratejinize entegre ederiz.",
+        "subtitle6": "Stratejiyi Gerçekliğe Dönüştürmek: Uygulamaya Geçiş",
+        "section61": "Fikir üretme ve strateji geliştirme aşamalarını tamamladıktan sonra sıra uygulamaya gelir. Ancak biz, sadece size bir plan sunup kenara çekilmeyiz. Uygulama aşamasında da sizinle birlikte çalışmaya devam ederiz. Bu süreçte:",
+        "list61": "Kilit performans göstergelerini (KPI’ları) izleyerek ilerlemenizi takip ederiz.",
+        "list62": "Gerekli yerlerde stratejinizi güncelleriz.",
+        "list63": "Sürekli danışmanlık ve destek sunarız.",
+        "section62": "Başarıya giden yolculuğunuzda sizinle birlikteyiz ve stratejinizin yeni zorluklar veya fırsatlar karşısında gelişmesini sağlarız.",
+        "subtitle7": "Neden Laodicea Solutions ile Fikir Üretme ve Strateji?",
+        "section71": "Fikir üretme ve strateji hizmeti sunan birçok firma var; ancak biz, yaklaşımımızın bizi farklı kıldığına inanıyoruz. İşte Laodicea Solutions'ı tercih etmeniz için birkaç neden:",
+        "list71": "<strong>İşbirlikçi Yaklaşım:</strong> Başından sonuna kadar sizinle el ele çalışır, sizin sesinizi ve vizyonunuzu her zaman ön planda tutarız.",
+        "list72": "<strong>Veriye Dayalı:</strong> Stratejilerimiz sezgilere değil, veri, araştırma ve analizlere dayanır. Fikirlerinizin pazar gerçekleriyle uyumlu olmasını sağlarız.",
+        "list73": "<strong>Yaratıcılık ve Pratiklik Bir Arada:</strong> Yaratıcı fikir üretimini pratik, uygulanabilir stratejilerle harmanlayarak, sadece kağıt üstünde kalmayan, gerçek dünyada başarılı olacak çözümler üretiriz.",
+        "list74": "<strong>Esneklik:</strong> Pazarlar sürekli değişir ve stratejiniz de buna ayak uydurmalıdır. Planınızın işinizle birlikte büyüyebilecek kadar esnek olmasını sağlıyoruz.",
+        "subtitle8": "Fikrinizi Gerçekleştirelim",
+        "section81": "Laodicea Solutions olarak, sadece büyük hayaller kurmanızı sağlamakla kalmıyor, aynı zamanda bu hayalleri gerçeğe dönüştürmenize de yardımcı oluyoruz. Yaratıcı fikir üretimi ve stratejik planlamanın mükemmel birleşimiyle, her adımda sizin yanınızdayız. İster yeni başlıyor olun, ister mevcut bir zorlukla başa çıkmak için yeni bir yaklaşıma ihtiyaç duyuyor olun, sizin başarıya ulaşmanıza yardımcı olmaya hazırız.",
+        "section82": "Fikrinizi hayata geçirmek için hazır mısınız? Vizyonunuzu nasıl gerçeğe dönüştürebileceğimizi birlikte keşfedelim."
+      },
+      "web-and-mobile": {
+        "summary": "",
+        "title": "Revolutionizing Your Workflow: AI-Powered Solutions for Modern Businesses"
+      }
     }
   }
 }
