@@ -12,9 +12,9 @@ export default function BlogPageClient() {
   return (
     <>
       <section className="mb-12 text-center">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">What Can We Do For You?</h1>
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{dictionary.blog.whatCanWeDoForYou}</h1>
         <p className="text-xl text-gray-600 dark:text-gray-300">
-          Discover how our innovative solutions can transform your business
+          {dictionary.blog.discoverInnovativeSolutions}
         </p>
       </section>
       <div className="flex flex-col md:flex-row gap-8">
@@ -56,58 +56,19 @@ export default function BlogPageClient() {
           </div>
         </div>
         <aside className="md:w-1/3">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Search</h3>
-            <div className="flex">
-              {/* <Input className="flex-grow" placeholder="Search blog posts" type="search" />
-              <Button className="ml-2" size="icon" type="submit">
-                <Search className="h-4 w-4" />
-              </Button> */}
-            </div>
-          </div>
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Categories</h3>
-            <ul className="space-y-2">
-              <li>
-                <a className="text-primary hover:underline" href="#">
-                  AI & Machine Learning
-                </a>
-              </li>
-              <li>
-                <a className="text-primary hover:underline" href="#">
-                  Cloud Computing
-                </a>
-              </li>
-              <li>
-                <a className="text-primary hover:underline" href="#">
-                  Cybersecurity
-                </a>
-              </li>
-              <li>
-                <a className="text-primary hover:underline" href="#">
-                  Data Analytics
-                </a>
-              </li>
-            </ul>
-          </div>
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Popular Posts</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{dictionary.blog.popularPosts}</h3>
             <ul className="space-y-4">
-              <li>
-                <a className="text-gray-600 dark:text-gray-300 hover:text-primary" href="#">
-                  10 Ways AI is Transforming Small Businesses
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-600 dark:text-gray-300 hover:text-primary" href="#">
-                  The Future of Cloud Computing: Trends to Watch
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-600 dark:text-gray-300 hover:text-primary" href="#">
-                  Cybersecurity Best Practices for Remote Teams
-                </a>
-              </li>
+              {whatCanDoWeDoOffers.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    className="text-gray-600 dark:text-gray-300 hover:text-primary"
+                    href={`/${language}/blog/what-we-can-do-for-you/${item.name}`}
+                  >
+                    {dictionary.landingPage.project.WCDFY[item.name]}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </aside>

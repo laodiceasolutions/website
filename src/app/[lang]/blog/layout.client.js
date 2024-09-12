@@ -4,9 +4,14 @@
 import { ApplicationContext } from "@/context/applicationContext";
 import { LanguageSelector } from "@/ui/layout/languageSelector";
 import Logo from "@/ui/layout/logo";
-import { navbarItems } from "@/utils/constants";
+import { navbarItems, socialMedias } from "@/utils/constants";
+import { Acme } from "next/font/google";
+import Image from "next/image";
 import Link from "next/link";
 import { useContext } from "react";
+
+const acme = Acme({ subsets: ['latin'], weight: ['400'] });
+
 
 export default function LayoutClient(props) {
   const { children } = props;
@@ -57,29 +62,15 @@ export default function LayoutClient(props) {
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-between">
             <div className="w-full md:w-1/3 mb-6 md:mb-0">
-              <h4 className="text-lg font-semibold mb-4">About TechBlog</h4>
+              <Logo />
               <p className="text-gray-400">
-                We're a tech startup dedicated to bringing you the latest insights and innovations in the world of
-                technology.
+                {dictionary.landingPage.about.slogan}
               </p>
             </div>
             <div className="w-full md:w-1/3 mb-6 md:mb-0">
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li>
-                  <a className="text-gray-400 hover:text-white" href="#">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a className="text-gray-400 hover:text-white" href="#">
-                    About
-                  </a>
-                </li>
-              </ul>
             </div>
             <div className="w-full md:w-1/3">
-              <h4 className="text-lg font-semibold mb-4">Connect With Us</h4>
+              {/* <h4 className="text-lg font-semibold mb-4">Connect With Us</h4> */}
               <ul className="flex space-x-4">
                 {
                   navbarItems.map((item) => (
@@ -89,23 +80,31 @@ export default function LayoutClient(props) {
                     </li>
                   ))
                 }
-                <a className="text-gray-400 hover:text-white" href="#">
-                  {/* <Facebook className="h-6 w-6" /> */}
-                </a>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  {/* <Twitter className="h-6 w-6" /> */}
-                </a>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  {/* <Linkedin className="h-6 w-6" /> */}
-                </a>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  {/* <Instagram className="h-6 w-6" /> */}
-                </a>
+                {
+                  socialMedias.map((media) => (
+                    <Link
+                      key={media.name}
+                      type="button"
+                      role="navigation"
+                      title={media.name}
+                      href={media.link}
+                      target="_blank"
+                    >
+                      <Image
+                        width={35}
+                        height={35}
+                        src={`/vectors/${media.name}.svg`}
+                        alt={media.name}
+                      />
+                    </Link>
+                  ))
+                }
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2023 TechBlog. All rights reserved.</p>
+            <p className={`${acme.className} text-sm text-white`}>&copy; 2024 Laodicea Solutions. All rights reserved.</p>
+            <p className={`${acme.className} text-sm text-white`}>made with ❤️</p>
           </div>
         </div>
       </footer>

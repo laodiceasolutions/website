@@ -119,6 +119,7 @@ export default function ProductDesignClient(params) {
             <BlogHeader
               title={dictionary.blog.WCDFY['product-design'].title}
               readTime={10}
+              publishDate={new Date(2024, 8, 11)}
             />
             <Image
               alt="Laodicea Solutions Products"
