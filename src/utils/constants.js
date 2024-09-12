@@ -8,6 +8,10 @@ const navbarItems = [
     path: '#project',
   },
   {
+    label: 'blog',
+    path: 'blog',
+  },
+  {
     label: 'contactUs',
     path: '#contactUs',
   },
@@ -55,22 +59,38 @@ const whatCanDoWeDoOffers = [
   {
     name: 'ideation-strategy',
     label: 'Ideation & Strategy',
-    cardImageSrc: '/blog/products/all-products.jpeg',
+    cardImageSrc: '/blog/products/office-environment-charts.jpeg',
   },
   {
     name: 'web-and-mobile',
     label: 'Web and Mobile',
-    cardImageSrc: '/blog/products/all-products.jpeg',
+    cardImageSrc: '/blog/products/phone-and-tablet.jpeg',
   },
   {
     name: 'embedded-systems',
     label: 'Embedded Systems',
-    cardImageSrc: '/blog/products/all-products.jpeg',
+    cardImageSrc: '/blog/products/embedded-systems-circuit.jpeg',
   },
-]
+];
+
+const socialMedias = [
+  {
+    name: 'facebook',
+    link: 'https://www.facebook.com/profile.php?id=61563294767615',
+  },
+  {
+    name: 'instagram',
+    link: 'https://www.instagram.com/laodiceasoln',
+  },
+  {
+    name: 'twitter',
+    link: 'https://x.com/laodiceasoln',
+  },
+];
 
 export {
   navbarItems,
   projects,
-  whatCanDoWeDoOffers
+  whatCanDoWeDoOffers,
+  socialMedias,
 }

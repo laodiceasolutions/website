@@ -6,23 +6,10 @@ import { Acme } from 'next/font/google'
 import Image from "next/image";
 import { ApplicationContext } from "@/context/applicationContext";
 import { useContext } from "react";
-import { navbarItems } from "@/utils/constants";
+import { navbarItems, socialMedias } from "@/utils/constants";
 
 const acme = Acme({ subsets: ['latin'], weight: ['400'] });
-const socialMedias = [
-  {
-    name: 'facebook',
-    link: 'https://www.facebook.com/profile.php?id=61563294767615',
-  },
-  {
-    name: 'instagram',
-    link: 'https://www.instagram.com/laodiceasoln',
-  },
-  {
-    name: 'twitter',
-    link: 'https://x.com/laodiceasoln',
-  },
-];
+
 
 export default function Footer() {
   const { dictionary, language } = useContext(ApplicationContext);
