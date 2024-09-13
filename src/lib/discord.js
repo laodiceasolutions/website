@@ -13,7 +13,6 @@ export default async function discordApiHandler(message) {
         content: message
       }),
     };
-    console.log({ payload });
     const response = await fetch(webhookUrl, payload);
 
     if (response.ok) {
