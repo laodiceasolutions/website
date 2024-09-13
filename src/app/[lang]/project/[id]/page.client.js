@@ -8,7 +8,6 @@ import { useContext } from "react";
 export default function PageClient(props) {
   const { project } = props;
   const { dictionary } = useContext(ApplicationContext);
-  console.log({ project })
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between relative">

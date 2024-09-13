@@ -1,20 +1,15 @@
-'use client';
+import PageClient from "./page.client";
 
-import { ApplicationProvider } from "@/context/applicationContext";
-import { Header } from "@/ui/layout/header";
-import Hero from "@/ui/layout/hero";
-import { redirect, usePathname } from "next/navigation";
+export const viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'cyan' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
 
 export default function Home() {
-  const pathname = usePathname();
-
-  redirect(`/tr${pathname}`);
-  return (
-    <ApplicationProvider>
-      <main className="flex min-h-screen flex-col items-center justify-between relative">
-        <Header />
-        <Hero />
-      </main>
-    </ApplicationProvider>
-  );
+  return(<PageClient />)
 }
