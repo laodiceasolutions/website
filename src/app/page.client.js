@@ -12,11 +12,13 @@ export default function PageClient(params) {
   redirect(`/tr${pathname}`);
 
   return (
-    <ApplicationProvider>
-      <main className="flex min-h-screen flex-col items-center justify-between relative">
-        <Header />
-        <Hero />
-      </main>
-    </ApplicationProvider>
+    <>
+      <ApplicationProvider>
+        <main className="flex min-h-screen flex-col items-center justify-between relative">
+          <Header />
+          <Hero />
+        </main>
+      </ApplicationProvider>
+    </>
   )
 }

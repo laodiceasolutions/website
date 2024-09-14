@@ -86,6 +86,10 @@ const socialMedias = [
     name: 'twitter',
     link: 'https://x.com/laodiceasoln',
   },
+  {
+    name: 'github',
+    link: 'https://github.com/laodiceasolutions',
+  },
 ];
 
 export {

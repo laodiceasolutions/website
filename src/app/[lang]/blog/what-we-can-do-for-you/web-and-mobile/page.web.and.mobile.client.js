@@ -3,6 +3,7 @@
 import BlogHeader from "@/ui/blog/blogHeader";
 import useApplication from "@/ui/hooks/useApplication";
 import { whatCanDoWeDoOffers } from "@/utils/constants";
+import { ArticleJsonLd } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +12,18 @@ export default function WebAndMobileClient(props) {
 
   return (
     <>
+      <ArticleJsonLd
+        type="BlogPosting"
+        url={`https://laodiceasolutions.com/${language}/blog/what-we-can-do-for-you/web-and-mobile`}
+        title={dictionary.blog.WCDFY['web-and-mobile'].title}
+        images={[
+          "https://laodiceasolutions.com/blog/products/phone-and-tablet.jpeg"
+        ]}
+        datePublished="2024-09-12"
+        dateModified="2024-09-12"
+        authorName="@laodiceasoln"
+        description={dictionary.blog.WCDFY["web-and-mobile"].summary}
+      />
       <article className="max-w-4xl mx-auto">
         <BlogHeader
           title={dictionary.blog.WCDFY['web-and-mobile'].title}

@@ -89,12 +89,13 @@ export default function LayoutClient(props) {
                       title={media.name}
                       href={media.link}
                       target="_blank"
-                    >
+                      >
                       <Image
                         width={35}
                         height={35}
                         src={`/vectors/${media.name}.svg`}
                         alt={media.name}
+                        className="bg-[#24A556] rounded-full"
                       />
                     </Link>
                   ))

@@ -11,10 +11,12 @@ export async function generateMetadata({ params }) {
     en,
     tr
   }
+  const title = `Laodicea Solutions - ${dictionary[lang ?? 'tr'].landingPage.project.WCDFY['embedded-systems']}`;
+  const description = dictionary[lang ?? 'tr'].blog.WCDFY['embedded-systems'].summary;
   const metadata = {
     tr: {
-      title: `Laodicea Solutions - ${dictionary.tr.landingPage.project.WCDFY['embedded-systems']}`,
-      description: dictionary.tr.blog.WCDFY['embedded-systems'].summary,
+      title,
+      description,
       keywords: [
         "gömülü sistemler",
         "ürün tasarımı",
@@ -27,8 +29,8 @@ export async function generateMetadata({ params }) {
         type: 'website',
         locale: 'tr_TR',
         url: applicationUrl,
-        title: `Laodicea Solutions - ${dictionary.tr.landingPage.project.WCDFY['embedded-systems']}`,
-        description: dictionary.tr.blog.WCDFY['embedded-systems'].summary,
+        title,
+        description,
         images: [
           {
             url: `${applicationUrl}/api/og`,
@@ -42,8 +44,8 @@ export async function generateMetadata({ params }) {
       twitter: {
         card: 'summary_large_image',
         site: '@laodiceasoln',
-        title: `Laodicea Solutions - ${dictionary.tr.landingPage.project.WCDFY['embedded-systems']}`,
-        description: dictionary.tr.blog.WCDFY['embedded-systems'].summary,
+        title,
+        description,
         image: `${applicationUrl}/api/og`,
         creator: "@laodiceasoln",
       },
@@ -54,8 +56,8 @@ export async function generateMetadata({ params }) {
       canonical: applicationUrl,
     },
     en: {
-      title: `Laodicea Solutions - ${dictionary.en.landingPage.project.WCDFY['embedded-systems']}`,
-      description: dictionary.en.blog.WCDFY['embedded-systems'].summary,
+      title,
+      description,
       keywords: [
         "embedded systems",
         "product design",
@@ -69,8 +71,8 @@ export async function generateMetadata({ params }) {
         type: 'website',
         locale: 'en_US',
         url: applicationUrl,
-        title: `Laodicea Solutions - ${dictionary.en.landingPage.project.WCDFY['embedded-systems']}`,
-        description: dictionary.en.blog.WCDFY['embedded-systems'].summary,
+        title,
+        description,
         images: [
           {
             url: `${applicationUrl}/api/og?lang=en`,
@@ -84,8 +86,8 @@ export async function generateMetadata({ params }) {
       twitter: {
         card: 'summary_large_image',
         site: '@laodiceasoln',
-        title: `Laodicea Solutions - ${dictionary.en.landingPage.project.WCDFY['embedded-systems']}`,
-        description: dictionary.en.blog.WCDFY['embedded-systems'].summary,
+        title,
+        description,
         image: `${applicationUrl}/api/og?lang=en`,
         creator: "@laodiceasoln",
       },

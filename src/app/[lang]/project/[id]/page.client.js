@@ -1,16 +1,30 @@
 'use client';
+
 import { ApplicationContext } from "@/context/applicationContext";
 import Footer from "@/ui/layout/footer";
 import { Header } from "@/ui/layout/header";
+import { ArticleJsonLd, } from "next-seo";
 import Image from "next/image";
 import { useContext } from "react";
 
 export default function PageClient(props) {
   const { project } = props;
-  const { dictionary } = useContext(ApplicationContext);
+  const { dictionary, language } = useContext(ApplicationContext);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between relative">
+      <ArticleJsonLd
+        type="Article"
+        url={`https://laodiceasolutions.com/${language}/project/${project.name}`}
+        title={project.name}
+        images={[
+          `https://laodiceasolutions.com${project.img}`
+        ]}
+        datePublished="2024-09-12"
+        dateModified="2024-09-12"
+        authorName="@laodiceasoln"
+        description={dictionary?.landingPage?.project[project.name]}
+      />
       <Header fixed />
       <section className="p-1 max-w-4xl mx-auto">
         <div className="container grid grid-cols-12 gap-3 prose prose-lg dark:prose-invert max-w-none">

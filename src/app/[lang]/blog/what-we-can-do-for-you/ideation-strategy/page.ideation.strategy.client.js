@@ -3,6 +3,7 @@
 import BlogHeader from "@/ui/blog/blogHeader";
 import useApplication from "@/ui/hooks/useApplication";
 import { whatCanDoWeDoOffers } from "@/utils/constants";
+import { ArticleJsonLd } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +12,18 @@ export default function IdeationStrategyClient(props) {
 
   return (
     <>
+      <ArticleJsonLd
+        type="BlogPosting"
+        url={`https://laodiceasolutions.com/${language}/blog/what-we-can-do-for-you/ideation-strategy`}
+        title={dictionary.blog.WCDFY['product-design'].title}
+        images={[
+          "https://laodiceasolutions.com/blog/products/office-environment.jpeg"
+        ]}
+        datePublished="2024-09-12"
+        dateModified="2024-09-12"
+        authorName="@laodiceasoln"
+        description={dictionary.blog.WCDFY["ideation-strategy"].summary}
+      />
       <article className="max-w-4xl mx-auto">
         <BlogHeader
           title={dictionary.blog.WCDFY['ideation-strategy'].title}

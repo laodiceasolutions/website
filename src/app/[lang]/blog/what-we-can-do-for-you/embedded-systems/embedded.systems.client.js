@@ -3,6 +3,7 @@
 import BlogHeader from "@/ui/blog/blogHeader";
 import useApplication from "@/ui/hooks/useApplication";
 import { whatCanDoWeDoOffers } from "@/utils/constants";
+import { ArticleJsonLd } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,6 +12,18 @@ export default function EmbeddedSystemsClient(props) {
 
   return (
     <>
+      <ArticleJsonLd
+        type="BlogPosting"
+        url={`https://laodiceasolutions.com/${language}/blog/what-we-can-do-for-you/embedded-systems`}
+        title={dictionary.blog.WCDFY['embedded-systems'].title}
+        images={[
+          "https://laodiceasolutions.com/blog/products/embedded-systems-circuit.jpeg"
+        ]}
+        datePublished="2024-09-12"
+        dateModified="2024-09-12"
+        authorName="@laodiceasoln"
+        description={dictionary.blog.WCDFY["embedded-systems"].summary}
+      />
       <article className="max-w-4xl mx-auto">
         <BlogHeader
           title={dictionary.blog.WCDFY['embedded-systems'].title}

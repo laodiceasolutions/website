@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "./globals.css";
 
 const poppins = Inter({ subsets: ["latin"], weight: ['400', '500', '600', '700', '800', '900'] });
@@ -60,6 +61,11 @@ export const viewport = {
 export default function RootLayout({ children, params }) {
   return (
     <html lang={params.lang}>
+      {process.env.NODE_ENV === "production" && (
+        <>
+          <GoogleAnalytics gaId="G-FPV010ZMP7" />
+        </>
+      )}
       <body className={`${poppins.className}`}>
         {children}
       </body>
