@@ -147,12 +147,12 @@ export default function ProductDesignClient(params) {
             />
             <div className="prose prose-lg dark:prose-invert max-w-none">
               <p>
-                At Laodicea Solutions, we understand that designing a product can be an overwhelming task, especially if you're not sure where to start or how to transform your vision into something real. Whether you're a small business owner looking to create a unique digital presence, or an entrepreneur with a groundbreaking idea, our product design services are tailored to meet your specific needs.
+                {`At Laodicea Solutions, we understand that designing a product can be an overwhelming task, especially if you're not sure where to start or how to transform your vision into something real. Whether you're a small business owner looking to create a unique digital presence, or an entrepreneur with a groundbreaking idea, our product design services are tailored to meet your specific needs.`}
               </p>
               <p>But what does that really mean for you? Let’s break it down step by step.</p>
               <h2>A Personal Touch: We Start with Your Vision</h2>
               <p>
-                Every great product begins with a vision—a spark of an idea that could change your business or your industry. But the journey from that first idea to a finished product can be complex and often daunting. This is where we come in. At Laodicea Solutions, our first priority is understanding your vision and the challenges you're facing.
+                {`Every great product begins with a vision—a spark of an idea that could change your business or your industry. But the journey from that first idea to a finished product can be complex and often daunting. This is where we come in. At Laodicea Solutions, our first priority is understanding your vision and the challenges you're facing.`}
               </p>
               <p>
                 Maybe you’re thinking of launching a new mobile app, a web-based platform, or even an internal system for your company. Whatever it is, we start with one simple question: <i>What do you want to achieve?</i>
@@ -183,12 +183,12 @@ export default function ProductDesignClient(params) {
                 Understanding your audience is a key part of great product design. We analyze user behavior, current trends, and even competitor offerings. By understanding who will be using your product, we ensure that the final design not only looks fantastic but is also practical and solves real-world problems.
               </p>
               <p>You want a design that works, and we know how to get there.</p>
-              <h2>Collaboration at Every Step: You're Part of the Journey</h2>
+              <h2>{`Collaboration at Every Step: You're Part of the Journey`}</h2>
               <p>
                 Design isn’t something we do <i>for</i> you—it’s something we do <i>with</i> you. This collaborative spirit is at the heart of our approach. We believe the best products are designed when you, the client, are involved every step of the way. Whether it’s brainstorming new ideas or reviewing early mockups, we keep you in the loop.
               </p>
               <p>We’ll show you wireframes, sketches, and digital mockups of your product in the early stages. This allows you to see how things are coming together and offer feedback before we move into more detailed design work.</p>
-              <p>If something doesn't feel quite right, we adjust. If you come up with a new idea during the process, we’re flexible. Our goal is to make sure that the product reflects your vision while aligning with what users need.</p>
+              <p>{`If something doesn't feel quite right, we adjust. If you come up with a new idea during the process, we’re flexible. Our goal is to make sure that the product reflects your vision while aligning with what users need.`}</p>
               <h2>Prototyping and Testing: Seeing Is Believing</h2>
               <p>Once we have a design concept that you love, we move into prototyping. This is where your idea starts to come to life.</p>
               <p>We create interactive prototypes that give you a feel for how the final product will work. You can click through a mock-up of your app or website, see how it responds, and test different user flows. At this stage, it’s easier to make changes before moving into full-scale development.</p>
