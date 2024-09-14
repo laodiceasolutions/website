@@ -12,7 +12,7 @@ export default function About() {
 
 
   return (
-    <section className="relative min-h-screen w-full grid grid-cols-12 gap-8 container pt-16 md:pt-0" id="about">
+    <section className="relative min-h-screen w-full grid grid-cols-12 gap-8 container pt-16 md:pt-0 mx-auto px-4 py-4" id="about">
       <div className="absolute top-32 md:top-64 left-32 md:left-64">
         <Image
           src="/vectors/right-half.svg"

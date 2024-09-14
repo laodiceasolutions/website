@@ -25,7 +25,7 @@ const developmentTypes = [
 ]
 
 export default function ContactUsForm() {
-  const { dictionary,language } = useContext(ApplicationContext);
+  const { dictionary, language } = useContext(ApplicationContext);
   const [selectedType, setSelectedType] = useState('');
   return (
     <>
@@ -50,7 +50,7 @@ export default function ContactUsForm() {
         ]}
       />
       <form className={`${orbitron.className} flex flex-col justify-start items-start gap-5 whitespace-pre-wrap overflow-x-clip`} action={postContactUs}>
-        <h6 className={` text-[#3f3f3f] text-2xl md:text-3xl whitespace-pre pl-2 md:pl-0`}>{dictionary.landingPage.contactUs.WCDFY}</h6>
+        <h6 className={` text-[#3f3f3f] text-2xl md:text-3xl text-wrap text-center max-w-[90vw] pl-2 md:pl-0`}>{dictionary.landingPage.contactUs.WCDFY}</h6>
         <div className="grid grid-cols-12 gap-2 md:gap-10">
           <div className="col-span-full lg:col-span-6 flex flex-col justify-start items-center md:items-start gap-5">
             <div className="flex flex-wrap justify-center md:justify-start items-center gap-2 md:gap-10 mb-5">

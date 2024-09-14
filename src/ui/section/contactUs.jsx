@@ -9,7 +9,7 @@ export default function ContactUs() {
   const { dictionary } = useContext(ApplicationContext);
 
   return (
-    <section className="relative min-h-screen w-full bg-white flex justify-center mt-5" id="contactUs">
+    <section className="relative min-h-screen w-full bg-white flex justify-center mt-5 container mx-auto px-4 py-4" id="contactUs">
        <div className="absolute left-0 -top-16 text-primary">
         <Image
           src="/vectors/wave.svg"
