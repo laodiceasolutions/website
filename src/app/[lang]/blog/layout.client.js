@@ -2,6 +2,7 @@
 
 
 import { ApplicationContext } from "@/context/applicationContext";
+import HamburgerMenu from "@/ui/layout/hamburgerMenu";
 import { LanguageSelector } from "@/ui/layout/languageSelector";
 import Logo from "@/ui/layout/logo";
 import { navbarItems, socialMedias } from "@/utils/constants";
@@ -35,24 +36,7 @@ export default function LayoutClient(props) {
               <LanguageSelector />
             </div>
           </nav>
-          <button className="md:hidden px-5 py-3 text-white bg-black" size="icon" variant="ghost">
-            <svg
-              className=" h-6 w-6"
-              fill="none"
-              height="24"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-              width="24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line x1="4" x2="20" y1="12" y2="12" />
-              <line x1="4" x2="20" y1="6" y2="6" />
-              <line x1="4" x2="20" y1="18" y2="18" />
-            </svg>
-          </button>
+          <HamburgerMenu />
         </div>
       </header>
       <main className="container mx-auto px-4 py-8">

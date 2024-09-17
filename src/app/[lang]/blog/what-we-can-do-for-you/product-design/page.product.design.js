@@ -23,6 +23,7 @@ export default function ProductDesignClient(params) {
         dateModified="2024-09-12"
         authorName="@laodiceasoln"
         description={dictionary.blog.WCDFY["product-design"].summary}
+        useAppDir={true}
       />
       {
         language === 'tr' ? (

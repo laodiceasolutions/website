@@ -7,7 +7,7 @@ import { ApplicationContext } from "@/context/applicationContext";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const { dictionary } = useContext(ApplicationContext);
+  const { dictionary, language } = useContext(ApplicationContext);
 
 
   const toggleMenu = () => {
@@ -39,7 +39,11 @@ export default function HamburgerMenu() {
         <div className="flex flex-col items-center mt-2 divide-y divide-gray-200">
           {
             navbarItems.map((item) => (
-              <Link key={item.label} href={item.path} className="text-xl hover:text-blue-600 w-full ml-2 py-4" onClick={toggleMenu}>
+              <Link
+                key={item.label}
+                href={`/${language}/${item.path}`}
+                className="text-xl hover:text-blue-600 w-full ml-2 py-4"
+                onClick={toggleMenu}>
                 {dictionary.landingPage.header.navbar[item.label]}
               </Link>
             ))

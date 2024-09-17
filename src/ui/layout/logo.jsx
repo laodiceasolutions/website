@@ -16,6 +16,7 @@ export default function Logo() {
       <LogoJsonLd
         logo="https://laodiceasolutions.com/logo.png"
         url="http://laodiceasolutions.com"
+        useAppDir={true}
       />
       <Link
         className={`${montserrat.className} text-2xl`}

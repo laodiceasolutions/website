@@ -24,6 +24,7 @@ export default function PageClient(props) {
         dateModified="2024-09-12"
         authorName="@laodiceasoln"
         description={dictionary?.landingPage?.project[project.name]}
+        useAppDir={true}
       />
       <Header fixed />
       <section className="p-1 max-w-4xl mx-auto">

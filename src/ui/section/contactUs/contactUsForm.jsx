@@ -48,6 +48,7 @@ export default function ContactUsForm() {
             availableLanguage: ['Turkish', 'English'],
           },
         ]}
+        useAppDir={true}
       />
       <form className={`${orbitron.className} flex flex-col justify-start items-start gap-5 whitespace-pre-wrap overflow-x-clip`} action={postContactUs}>
         <h6 className={` text-[#3f3f3f] text-2xl md:text-3xl text-wrap text-center max-w-[90vw] pl-2 md:pl-0`}>{dictionary.landingPage.contactUs.WCDFY}</h6>

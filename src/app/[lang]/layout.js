@@ -1,5 +1,6 @@
 import { ApplicationProvider } from "@/context/applicationContext";
 import { getDictionary } from "./dictionaries";
+import LayoutClient from "./layout.client";
 
 const applicationUrl = process.env.APPLICATION_URL;
 
@@ -98,9 +99,8 @@ export default async function Home({ children, params: { lang } }) {
 
   const dict = await getDictionary(lang);
   return (
-    <ApplicationProvider dictionary={dict}>
+    <LayoutClient dict={dict}>
       {children}
-    </ApplicationProvider>
-
+    </LayoutClient>
   );
 }

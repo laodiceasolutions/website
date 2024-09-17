@@ -22,6 +22,7 @@ export default function Footer() {
         name="Laodicea Solutions"
         url="https://laodiceasolutions.com"
         sameAs={socialMedias.map((media) => media.link)}
+        useAppDir={true}
       />
       <section className="w-full min-h-[440px] grid grid-cols-12 bg-center bg-contain bg-no-repeat bg-[#24A556] bg-[url('/background/illustration-footer.png')] p-2 md:p-0 mx-auto px-4 py-4" id="footer">
         <div className="col-span-full lg:col-span-6 flex flex-col justify-end items-start max-w-lg gap-5 w-full mx-auto">

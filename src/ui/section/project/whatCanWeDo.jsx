@@ -37,7 +37,7 @@ export default function WhatCanWeDo() {
           src="/vectors/wire.svg"
           width={189}
           height={55}
-          className="hidden md:block"
+          className="hidden xl:block"
           alt="Illustration Wire"
         />
       </div>
@@ -56,7 +56,7 @@ export default function WhatCanWeDo() {
           src="/vectors/arrow-with-tail.svg"
           width={298}
           height={81}
-          className="hidden md:block"
+          className="hidden xl:block"
           alt="Illustration Cookie"
         />
       </div>
@@ -69,7 +69,7 @@ export default function WhatCanWeDo() {
           alt="Illustration Grid Circle"
         />
       </div>
-      <div className="col-span-full lg:col-span-1 h-full w-full flex justify-center items-center  bg-contain bg-no-repeat md:bg-[url('/background/grey-design.png')]">
+      <div className="col-span-full lg:col-span-1 h-full w-full flex justify-start lg:justify-center items-center  bg-contain bg-no-repeat md:bg-[url('/background/grey-design.png')]">
         <p className={`text-3xl md:text-7xl text-gray-100 font-bold max-w-xs whitespace-pre-wrap text-left ${outfit.className}`}>
           {dictionary.landingPage.project.WCDFY.title}
         </p>
