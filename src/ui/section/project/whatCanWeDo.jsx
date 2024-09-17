@@ -31,7 +31,7 @@ export default function WhatCanWeDo() {
   const { dictionary } = useContext(ApplicationContext);
 
   return (
-    <main className="container bg-[#3f3f3f] bg-[url('/background/stained.png')] rounded-xl relative grid grid-cols-2 h-[450px]">
+    <main className="container bg-[#3f3f3f] bg-[url('/background/stained.png')] rounded-xl relative grid grid-cols-2 h-[450px] p-1 md:p-0">
       <div className="absolute left-44 top-0 text-white">
         <Image
           src="/vectors/wire.svg"
