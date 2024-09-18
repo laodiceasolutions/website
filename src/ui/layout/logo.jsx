@@ -23,11 +23,13 @@ export default function Logo() {
         href={`/${language}`}
         title="Brand"
       >
-        Laodicea
-        {' '}
-        <span className="text-primary">
-          Solutions
-        </span>
+        <h1>
+          Laodicea
+          {' '}
+          <span className="text-primary">
+            Solutions
+          </span>
+        </h1>
       </Link>
     </>
   )

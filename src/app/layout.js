@@ -7,7 +7,7 @@ const applicationUrl = process.env.APPLICATION_URL;
 
 export const metadata = {
   title: 'Laodicea Solutions - Dijital Dönüşümünüzü Gerçekleştiriyoruz!',
-  description: 'Laodicea Solutions, küçük ve orta ölçekli işletmelere özel CRM, ERP ve finans çözümleri sunar. İş operasyonlarınızı özelleştirilmiş yazılım çözümlerimizle dönüştürün.',
+  description: 'Küçük ve orta ölçekli işletmelere özel CRM, ERP ve finans çözümleri sunar. İş operasyonlarınızı özelleştirilmiş yazılım çözümlerimizle dönüştürün.',
   keywords: [
     "dijital dönüşüm",
     "crm",
@@ -45,7 +45,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  canonical: applicationUrl, // Kanonik URL
+  canonical: `${applicationUrl}/tr/project`, // Kanonik URL
 };
 
 export const viewport = {
