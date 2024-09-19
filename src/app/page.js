@@ -1,3 +1,4 @@
+import { getDictionary } from "./[lang]/dictionaries";
 import PageClient from "./page.client";
 
 export const viewport = {
@@ -10,6 +11,7 @@ export const viewport = {
   maximumScale: 1,
 }
 
-export default function Home() {
-  return(<PageClient />)
+export default async function Home() {
+  const trDictionary = await getDictionary('tr');
+  return (<PageClient dict={trDictionary} />)
 }

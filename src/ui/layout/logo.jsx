@@ -9,7 +9,8 @@ import { useContext } from "react";
 const montserrat = Montserrat({ subsets: ["latin"], weight: ['600',], style: "italic" });
 
 
-export default function Logo() {
+export default function Logo(props) {
+  const { useAsH1 } = props;
   const { language } = useContext(ApplicationContext);
   return (
     <>
@@ -23,13 +24,25 @@ export default function Logo() {
         href={`/${language}`}
         title="Brand"
       >
-        <h1>
-          Laodicea
-          {' '}
-          <span className="text-primary">
-            Solutions
-          </span>
-        </h1>
+        {
+          useAsH1 ? (
+            <h1>
+              Laodicea
+              {' '}
+              <span className="text-primary">
+                Solutions
+              </span>
+            </h1>
+          ) : (
+            <>
+              Laodicea
+              {' '}
+              <span className="text-primary">
+                Solutions
+              </span>
+            </>
+          )
+        }
       </Link>
     </>
   )

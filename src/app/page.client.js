@@ -1,22 +1,26 @@
 'use client';
 
 import { ApplicationProvider } from "@/context/applicationContext";
+import Footer from "@/ui/layout/footer";
 import { Header } from "@/ui/layout/header";
 import Hero from "@/ui/layout/hero";
-import { redirect } from "next/navigation";
-import { usePathname } from "next/navigation";
+import About from "@/ui/section/about";
+import ContactUs from "@/ui/section/contactUs";
+import Project from "@/ui/section/project";
 
 export default function PageClient(params) {
-  const pathname = usePathname();
-
-  redirect(`/tr${pathname}`);
+  const { dict } = params;
 
   return (
     <>
-      <ApplicationProvider>
-        <main className="flex min-h-screen flex-col items-center justify-between relative">
+      <ApplicationProvider dictionary={dict}>
+        <main className="flex min-h-screen flex-col items-center justify-between relative overflow-x-hidden">
           <Header />
           <Hero />
+          <About />
+          <Project />
+          <ContactUs />
+          <Footer />
         </main>
       </ApplicationProvider>
     </>

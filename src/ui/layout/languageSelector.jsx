@@ -18,8 +18,13 @@ export function LanguageSelector() {
   const pathname = usePathname();
   const { language = 'tr' } = applicationContext;
   const handleLanguageChange = (lang) => {
-    const newPath = `${pathname.replace(language,lang)}${window.location.hash}`;
+    if (pathname.length === 1) {
+      router.push(`/${lang}${window.location.hash}`);
+      return;
+    }
+    const newPath = `${pathname.replace(language, lang)}${window.location.hash}`;
     router.push(newPath);
+
   };
 
   const languages = ['tr', 'en'];

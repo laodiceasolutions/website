@@ -36,7 +36,7 @@ export function Header(props) {
         'md:mx-auto my-auto shadow-md rounded-3xl container': !sticky && !fixed,
 
       })}>
-        <Logo />
+        <Logo useAsH1={true} />
         <Navbar />
         <div className="hidden md:block">
           <LanguageSelector />
