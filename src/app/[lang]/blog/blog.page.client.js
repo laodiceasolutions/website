@@ -12,8 +12,8 @@ export default function BlogPageClient() {
   return (
     <>
       <section className="mb-12 text-center">
-        <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{dictionary.blog.whatCanWeDoForYou}</h1>
-        <p className="text-xl text-gray-600 dark:text-gray-300">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">{dictionary.blog.whatCanWeDoForYou}</h1>
+        <p className="text-xl text-gray-600">
           {dictionary.blog.discoverInnovativeSolutions}
         </p>
       </section>
@@ -23,7 +23,7 @@ export default function BlogPageClient() {
             {whatCanDoWeDoOffers.map((item) => (
               <article
                 key={item.name}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+                className="bg-white rounded-lg shadow-md overflow-hidden"
               >
                 <Image
                   alt="Blog post image"
@@ -37,10 +37,10 @@ export default function BlogPageClient() {
                   width="400"
                 />
                 <div className="p-6">
-                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  <h2 className="text-xl font-semibold text-gray-900 mb-2">
                     {dictionary.landingPage.project.WCDFY[item.name]}
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 mb-4">
                     {dictionary.blog.WCDFY[item.name].summary}
                   </p>
                   <Link
@@ -56,13 +56,13 @@ export default function BlogPageClient() {
           </div>
         </div>
         <aside className="md:w-1/3">
-          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{dictionary.blog.popularPosts}</h3>
+          <div className="bg-white rounded-lg shadow-md p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">{dictionary.blog.popularPosts}</h3>
             <ul className="space-y-4">
               {whatCanDoWeDoOffers.map((item) => (
                 <li key={item.name}>
                   <Link
-                    className="text-gray-600 dark:text-gray-300 hover:text-primary"
+                    className="text-gray-600 hover:text-primary"
                     href={`/${language}/blog/what-we-can-do-for-you/${item.name}`}
                   >
                     {dictionary.landingPage.project.WCDFY[item.name]}

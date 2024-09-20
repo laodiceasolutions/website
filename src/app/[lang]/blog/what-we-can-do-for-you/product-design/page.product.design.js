@@ -235,8 +235,8 @@ export default function ProductDesignClient(params) {
           </article>
         )
       }
-      <section className="max-w-4xl mx-auto mt-12 border-t border-gray-200 dark:border-gray-700 pt-8">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Related Posts</h2>
+      <section className="max-w-4xl mx-auto mt-12 border-t border-gray-200 pt-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">Related Posts</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {whatCanDoWeDoOffers
             .filter((offer) => offer.name !== 'product-design')
@@ -244,7 +244,7 @@ export default function ProductDesignClient(params) {
             .map((offer) => (
               <div
                 key={offer.name}
-                className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+                className="bg-white rounded-lg shadow-md overflow-hidden"
               >
                 <Image
                   alt={dictionary.blog.WCDFY[offer.name].title}
@@ -258,10 +258,10 @@ export default function ProductDesignClient(params) {
                   width="400"
                 />
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {dictionary.landingPage.project.WCDFY[offer.name]}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-600 mb-4">
                     {dictionary.blog.WCDFY[offer.name].summary}
                   </p>
                   <Link

@@ -18,8 +18,8 @@ export default function LayoutClient(props) {
   const { children } = props;
   const { dictionary, language } = useContext(ApplicationContext);
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <header className="bg-white dark:bg-gray-800 shadow-sm">
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-white shadow-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Logo />
           <nav className="hidden md:flex space-x-4">
