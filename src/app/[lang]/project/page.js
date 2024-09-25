@@ -7,6 +7,11 @@ export const metadata = {
   title: 'Laodicea Solutions - Dijital Dönüşümünüzü Gerçekleştiriyoruz!',
   description: 'Projeler/Laodicea Solutions, küçük ve orta ölçekli işletmelere özel CRM, ERP ve finans çözümleri sunar. İş operasyonlarınızı özelleştirilmiş yazılım çözümlerimizle dönüştürün.',
   keywords: [
+    "laodicea solutions projects",
+    "laodikya solution projeler",
+    "denizli yazılım",
+    "yazılım çözümleri",
+    "projeler",
     "crm",
     "erp",
     "mobil uygulama",

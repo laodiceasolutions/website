@@ -12,6 +12,10 @@ export function generateMetadata({ params }) {
       title: 'Laodicea Solutions - Dijital Dönüşümünüzü Gerçekleştiriyoruz!',
       description: 'küçük ve orta ölçekli işletmelere özel CRM, ERP ve finans çözümleri sunar. İş operasyonlarınızı özelleştirilmiş yazılım çözümlerimizle dönüştürün.',
       keywords: [
+        "laodicea solutions",
+        "laodikya solution",
+        "denizli yazılım",
+        "yazılım çözümleri",
         "dijital dönüşüm",
         "crm",
         "erp",
@@ -53,6 +57,10 @@ export function generateMetadata({ params }) {
       title: 'Laodicea Solutions - Empowering Your Digital Transformation!',
       description: 'We provides tailored CRM, ERP, and finance solutions for small and medium-sized businesses. Transform your business operations with our software solutions.',
       keywords: [
+        "laodicea solutions",
+        "laodikya solution",
+        "denizli yazılım",
+        "yazılım çözümleri",
         "digital transformation",
         "crm",
         "erp",

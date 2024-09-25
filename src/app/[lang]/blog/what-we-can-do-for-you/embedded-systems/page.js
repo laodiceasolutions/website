@@ -23,7 +23,15 @@ export async function generateMetadata({ params }) {
         "strateji geliştirme",
         "web uygulamaları",
         "mobil uygulamalar",
-        "dijital dönüşüm"
+        "dijital dönüşüm",
+        "laodicea solutions projects",
+        "laodikya solution projeler",
+        "denizli yazılım",
+        "yazılım çözümleri",
+        "proje detayı",
+        "project detail",
+        "ürünlerimiz",
+        "yapabileceklerimiz"
       ],
       openGraph: {
         type: 'website',
@@ -65,7 +73,11 @@ export async function generateMetadata({ params }) {
         "strategy",
         "web development",
         "mobile development",
-        "digital transformation"
+        "digital transformation",
+        "laodicea solutions projects",
+        "laodikya solution projeler",
+        "products",
+        "what can we do for you",
       ],
       openGraph: {
         type: 'website',
