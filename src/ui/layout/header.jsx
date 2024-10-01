@@ -8,7 +8,7 @@ import Navbar from "./navbar";
 import classNames from "classnames";
 
 export function Header(props) {
-  const { fixed } = props;
+  const { fixed, useAsH1 } = props;
   const headerRef = useRef();
   const [sticky, setSticky] = useState(false);
   useEffect(() => {
@@ -36,7 +36,7 @@ export function Header(props) {
         'md:mx-auto my-auto shadow-md rounded-3xl container': !sticky && !fixed,
 
       })}>
-        <Logo useAsH1={true} />
+        <Logo useAsH1={useAsH1} />
         <Navbar />
         <div className="hidden md:block">
           <LanguageSelector />

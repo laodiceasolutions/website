@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
 
   const metadata = {
     tr: {
-      title: `Laodicea Solutions - ${dictionary[lang].landingPage.project[project.name]}`,
+      title: `${dictionary[lang].landingPage.project[project.name]}`,
       description: dictionary[lang].landingPage?.project[`${project.name}_Detail`],
       keywords: [
         project.name,
@@ -66,7 +66,7 @@ export async function generateMetadata({ params }) {
       canonical: applicationUrl,
     },
     en: {
-      title: `Laodicea Solutions - ${dictionary[lang].landingPage?.project[project.name]}`,
+      title: `${dictionary[lang].landingPage?.project[project.name]}`,
       description: dictionary[lang].landingPage?.project[`${project.name}_Detail`],
       keywords: [
         project.name,

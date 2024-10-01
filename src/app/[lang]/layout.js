@@ -9,7 +9,7 @@ export function generateMetadata({ params }) {
 
   const metadata = {
     tr: {
-      title: 'Laodicea Solutions - Dijital Dönüşümünüzü Gerçekleştiriyoruz!',
+      title: 'Laodicea Solutions',
       description: 'küçük ve orta ölçekli işletmelere özel CRM, ERP ve finans çözümleri sunar. İş operasyonlarınızı özelleştirilmiş yazılım çözümlerimizle dönüştürün.',
       keywords: [
         "laodicea solutions",
@@ -54,7 +54,7 @@ export function generateMetadata({ params }) {
       canonical: `${applicationUrl}/${lang}/project`,
     },
     en: {
-      title: 'Laodicea Solutions - Empowering Your Digital Transformation!',
+      title: 'Laodicea Solutions',
       description: 'We provides tailored CRM, ERP, and finance solutions for small and medium-sized businesses. Transform your business operations with our software solutions.',
       keywords: [
         "laodicea solutions",

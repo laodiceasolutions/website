@@ -15,7 +15,7 @@ export default function PageClient(params) {
     <>
       <ApplicationProvider dictionary={dict}>
         <main className="flex min-h-screen flex-col items-center justify-between relative overflow-x-hidden">
-          <Header />
+          <Header useAsH1 />
           <Hero />
           <About />
           <Project />

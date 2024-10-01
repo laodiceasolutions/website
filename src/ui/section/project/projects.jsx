@@ -83,7 +83,7 @@ export default function Projects() {
               label={dictionary?.landingPage?.project[project.name]}
               img={project.img}
               tags={project.tags}
-              link={`${language}/${project.link}`}
+              link={`/${language}/${project.link}`}
               soon={project.soon}
             />
           </div>

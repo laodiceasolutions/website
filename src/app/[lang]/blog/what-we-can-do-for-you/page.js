@@ -7,8 +7,8 @@ export function generateMetadata({ params }) {
 
   const metadata = {
     tr: {
-      title: 'Laodicea Solutions - Sizin İçin Neler Yapabiliriz?',
-      description: 'Laodicea Solutions, ürün tasarımı, strateji geliştirme, web ve mobil uygulamalar ile gömülü sistemler alanında işletmenizin dijital dönüşümüne destek sağlar.',
+      title: 'Sizin İçin Neler Yapabiliriz?',
+      description: 'Yenilikçi çözümlerimizle işinizi nasıl dönüştürebileceğini keşfedin',
       keywords: [
         "laodicea solutions projects",
         "laodikya solution projeler",
@@ -54,8 +54,8 @@ export function generateMetadata({ params }) {
       canonical: applicationUrl,
     },
     en: {
-      title: 'Laodicea Solutions - What Can We Do For You?',
-      description: 'Laodicea Solutions supports your business’s digital transformation through product design, ideation & strategy, web and mobile development, and embedded systems.',
+      title: 'What Can We Do For You?',
+      description: 'Discover how our innovative solutions can transform your business',
       keywords: [
         "laodicea solutions projects",
         "laodikya solution projeler",

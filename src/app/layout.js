@@ -6,11 +6,11 @@ const poppins = Inter({ subsets: ["latin"], weight: ['400', '500', '600', '700',
 const applicationUrl = process.env.APPLICATION_URL;
 
 export const metadata = {
-  title: 'Laodicea Solutions - Dijital Dönüşümünüzü Gerçekleştiriyoruz!',
+  title: 'Laodicea Solutions',
   description: 'Küçük ve orta ölçekli işletmelere özel CRM, ERP ve finans çözümleri sunar. İş operasyonlarınızı özelleştirilmiş yazılım çözümlerimizle dönüştürün.',
   keywords: [
     "laodicea solutions",
-    "laodikya solution",
+    "laodikya solutions",
     "denizli yazılım",
     "yazılım çözümleri",
     "dijital dönüşüm",
@@ -49,7 +49,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
-  canonical: `${applicationUrl}/tr/project`, // Kanonik URL
+  canonical: `${applicationUrl}/tr`, // Kanonik URL
 };
 
 export const viewport = {

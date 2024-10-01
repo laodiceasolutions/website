@@ -11,7 +11,7 @@ export async function generateMetadata({ params }) {
     en,
     tr
   }
-  const title = `Laodicea Solutions - ${dictionary[lang ?? 'tr'].landingPage.project.WCDFY['ideation-strategy']}`;
+  const title = `${dictionary[lang ?? 'tr'].landingPage.project.WCDFY['ideation-strategy']}`;
   const description = dictionary[lang ?? 'tr'].blog.WCDFY['ideation-strategy'].summary;
   const metadata = {
     tr: {

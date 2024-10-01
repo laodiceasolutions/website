@@ -2,6 +2,12 @@ import { notFound } from "next/navigation";
 import PageClient from "./page.client";
 import { whatCanDoWeDoOffers } from "@/utils/constants";
 
+export const metadata= {
+  robots: {
+    index: false,
+    follow: false,
+  },
+}
 
 export default function Page(props) {
   if (!props?.params?.id) {
