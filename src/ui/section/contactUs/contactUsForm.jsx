@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { CorporateContactJsonLd } from 'next-seo';
 import { Orbitron } from 'next/font/google'
 import Image from 'next/image';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 
 const orbitron = Orbitron({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] });
 const developmentTypes = [
@@ -26,7 +26,31 @@ const developmentTypes = [
 
 export default function ContactUsForm() {
   const { dictionary, language } = useContext(ApplicationContext);
-  const [selectedType, setSelectedType] = useState('');
+  const [selectedType, setSelectedType] = useState('webDevelopment');
+  const recapthcaContainer = useRef();
+
+  useEffect(() => {
+    function errorCallback(params, a, b) {
+      console.log({ errorParams: params, a, b })
+    }
+
+    function successCallback(params) {
+      console.log({ successParams: params, a, b })
+    }
+
+    if (!recapthcaContainer.current && grecaptcha?.ready) {
+      recapthcaContainer.current = true;
+      grecaptcha.ready(function () {
+        grecaptcha.render('recapthcaContainer', {
+          'sitekey': '6LfORXAqAAAAACSHPQSC4BAtM8Mg6ZAnoS-lUUva',
+          'data-error-callback': errorCallback,
+          'data-callback': successCallback,
+          'data-expired-callback': errorCallback,
+          hl: 'tr',
+        });
+      });
+    }
+  }, []);
   return (
     <>
       <CorporateContactJsonLd
@@ -98,10 +122,24 @@ export default function ContactUsForm() {
               required
               rows={2}
             />
+            <div id="recapthcaContainer" ></div>
             <button
               type="submit"
               role="form"
               className="px-8 py-4 border border-gray-200 rounded-3xl text-lg text-white hover:shadow-lg bg-secondary focus:bg-primary"
+              onClick={(e) => {
+                if (grecaptcha) {
+                  const recaptchaResponse = grecaptcha.getResponse();
+                  if (recaptchaResponse.length === 0) {
+                    alert("Please prove that you are not robots!");
+                    e.preventDefault();
+                    return;
+                  }
+                } else {
+                  e.preventDefault();
+                  return;
+                }
+              }}
             >
               <Image
                 src="/vectors/arrow-trape.svg"

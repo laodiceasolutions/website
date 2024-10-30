@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import "./globals.css";
+import Script from "next/script";
 
 const poppins = Inter({ subsets: ["latin"], weight: ['400', '500', '600', '700', '800', '900'] });
 const applicationUrl = process.env.APPLICATION_URL;
@@ -74,6 +75,7 @@ export default function RootLayout({ children, params }) {
       <body className={`${poppins.className}`}>
         {children}
       </body>
+      <Script src="https://www.google.com/recaptcha/api.js" strategy="beforeInteractive" async="" defer="" />
     </html>
   );
 }
