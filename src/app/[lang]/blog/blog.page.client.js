@@ -62,7 +62,7 @@ export default function BlogPageClient() {
               {whatCanDoWeDoOffers.map((item) => (
                 <li key={item.name}>
                   <Link
-                    className="text-gray-600 hover:text-primary"
+                    className="text-gray-600 hover:text-laodicea-primary"
                     href={`/${language}/blog/what-we-can-do-for-you/${item.name}`}
                   >
                     {dictionary.landingPage.project.WCDFY[item.name]}

@@ -29,7 +29,7 @@ export default function PhotoGrid() {
           alt="Our collegues"
         />
       </div>
-      <div className="absolute -left-20 -bottom-12 border-2 border-dashed border-primary rounded-full py-10 px-5">
+      <div className="absolute -left-20 -bottom-12 border-2 border-dashed border-laodicea-primary rounded-full py-10 px-5">
         <Image
           src="/vectors/asteriks.svg"
           width={118}

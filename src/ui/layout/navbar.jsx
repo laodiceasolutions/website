@@ -13,7 +13,7 @@ export default function Navbar() {
       <ul className="flex flex-wrap items-center justify-center gap-2 text-gray-900">
         {
           navbarItems.map((item) => (
-            <li key={item.path} className="text-lg font-semibold hover:text-primary focus:border focus:border-primary p-1">
+            <li key={item.path} className="text-lg font-semibold hover:text-laodicea-primary focus:border focus:border-laodicea-primary p-1">
               <span className="sr-only">{item.label}</span>
               <Link href={`/${language}/${item.path}`}>{`${dictionary.landingPage.header.navbar[item.label]}`}</Link>
             </li>

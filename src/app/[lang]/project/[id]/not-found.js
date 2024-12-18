@@ -15,7 +15,7 @@ export default function NotFound(params) {
         <h2 className="text-xl font-semibold">404 Project Not Found</h2>
         <Link
           href={`/${language}`}
-          className="text-black hover:text-primary focus:text-primary text-2xl"
+          className="text-black hover:text-laodicea-primary focus:text-laodicea-primary text-2xl"
         >
           Home Page
         </Link>

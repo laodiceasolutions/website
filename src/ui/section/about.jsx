@@ -23,7 +23,7 @@ export default function About() {
         />
       </div>
       <div className="absolute top-5">
-        <h2 className="text-5xl text-secondary font-extrabold">{dictionary.landingPage.header.navbar.about}</h2>
+        <h2 className="text-5xl text-laodicea-secondary font-extrabold">{dictionary.landingPage.header.navbar.about}</h2>
       </div>
       <div className="col-span-full lg:col-span-6 flex items-center">
         <PhotoGrid />

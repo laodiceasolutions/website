@@ -2,13 +2,14 @@ import { Inter } from "next/font/google";
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google'
 import "./globals.css";
 import Script from "next/script";
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Inter({ subsets: ["latin"], weight: ['400', '500', '600', '700', '800', '900'] });
 const applicationUrl = process.env.APPLICATION_URL;
 
 export const metadata = {
   title: 'Laodicea Solutions',
-  description: 'Küçük ve orta ölçekli işletmelere özel CRM, ERP ve finans çözümleri sunar. İş operasyonlarınızı özelleştirilmiş yazılım çözümlerimizle dönüştürün.',
+  description: 'Denizli\'de işletmelere özel CRM, ERP ve finans yazılım hizmetleri sunar. İş operasyonlarınızı özelleştirilmiş yazılım çözümlerimizle dönüştürün.',
   keywords: [
     "laodicea solutions",
     "laodikya solutions",
@@ -75,6 +76,7 @@ export default function RootLayout({ children, params }) {
       <body className={`${poppins.className}`}>
         {children}
       </body>
+      <Toaster />
       <Script src="https://www.google.com/recaptcha/api.js" strategy="beforeInteractive" async="" defer="" />
     </html>
   );

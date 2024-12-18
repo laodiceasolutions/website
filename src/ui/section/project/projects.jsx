@@ -11,7 +11,7 @@ function ProjectItem(props) {
   const { dictionary } = useContext(ApplicationContext);
 
   return (
-    <li className="grid grid-rows-4 w-[390px] h-[533px] bg-white hover:bg-[#3F3F3F] text-black hover:text-white rounded-lg">
+    <li className="grid grid-rows-4 w-[390px] h-[533px] bg-white hover:shadow-xl hover:scale-95 text-black  rounded-lg">
       <div className={`row-span-1 md:row-span-2`}>
         <div className="bg-black relative">
           <Image
@@ -46,16 +46,16 @@ function ProjectItem(props) {
 
       </div>
       <div className="row-span-2 flex flex-col justify-between items-start gap-2 p-2">
-        <h3 className="text-md font-normal">{title}</h3>
+        <h3 className="text-lg font-medium">{title}</h3>
         <p className="text-sm font-normal">{label}</p>
         <Link
           type="button"
           role="navigation"
           name={name}
-          className="text-black w-10 h-10 rounded-full focus:bg-primary bg-black hover:bg-primary p-2"
+          className="text-black w-10 h-10 rounded-full focus:bg-laodicea-primary bg-black hover:bg-laodicea-primary p-2"
           href={link}
         >
-          <span className="text-primary">
+          <span className="text-laodicea-primary">
             <Image
               src="/vectors/arrow-right.svg"
               width={48}

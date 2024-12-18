@@ -35,7 +35,7 @@ export function LanguageSelector() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         type="button"
-        className="inline-flex items-center justify-center gap-1 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary max-w-14"
+        className="inline-flex items-center justify-center gap-1 w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-laodicea-primary max-w-14"
         id={LANGUAGE_SELECTOR_ID}
         aria-expanded={isOpen}
       >
@@ -61,7 +61,7 @@ export function LanguageSelector() {
                 key={_language}
                 onClick={() => handleLanguageChange(_language)}
                 className={`${language === _language
-                  ? "bg-gray-100 text-primary"
+                  ? "bg-gray-100 text-laodicea-primary"
                   : "text-gray-700"
                   } px-4 py-2 text-sm text-start items-center inline-flex gap-1 hover:bg-gray-100 w-full ${index % 2 === 0 ? 'rounded-r' : 'rounded-l'}`}
                 role="menuitem"

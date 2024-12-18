@@ -29,7 +29,7 @@ export default function Logo(props) {
             <h1>
               Laodicea
               {' '}
-              <span className="text-primary">
+              <span className="text-laodicea-primary">
                 Solutions
               </span>
             </h1>
@@ -37,7 +37,7 @@ export default function Logo(props) {
             <>
               Laodicea
               {' '}
-              <span className="text-primary">
+              <span className="text-laodicea-primary">
                 Solutions
               </span>
             </>

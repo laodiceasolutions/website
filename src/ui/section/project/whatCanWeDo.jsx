@@ -17,7 +17,7 @@ function OffersMenu() {
           <Link
             key={item.name}
             href={`/${language}/blog/what-we-can-do-for-you/${item.name}`}
-            className={`w-full max-w-md px-2 py-5 text-gray-100 hover:text-primary focus:text-primary text-2xl ${outfit.className}`}
+            className={`w-full max-w-md px-2 py-5 text-gray-100 hover:text-laodicea-primary focus:text-laodicea-primary text-2xl ${outfit.className}`}
           >
             <h4>{dictionary.landingPage.project.WCDFY[item.name]}</h4>
           </Link>

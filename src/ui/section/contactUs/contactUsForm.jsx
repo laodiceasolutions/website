@@ -1,12 +1,12 @@
 'use client';
 
 import { ApplicationContext } from '@/context/applicationContext';
-import { postContactUs } from '@/lib/action';
+import { useToast } from '@/hooks/use-toast';
 import classNames from 'classnames';
 import { CorporateContactJsonLd } from 'next-seo';
 import { Orbitron } from 'next/font/google'
 import Image from 'next/image';
-import { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 
 const orbitron = Orbitron({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] });
 const developmentTypes = [
@@ -28,6 +28,8 @@ export default function ContactUsForm() {
   const { dictionary, language } = useContext(ApplicationContext);
   const [selectedType, setSelectedType] = useState('webDevelopment');
   const recapthcaContainer = useRef();
+  const { toast } = useToast();
+  const [renderKey, setRenderKey] = useState(new Date().getTime());
 
   useEffect(() => {
     function errorCallback(params, a, b) {
@@ -51,8 +53,50 @@ export default function ContactUsForm() {
       });
     }
   }, []);
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const json = {
+      email: document.querySelector('[name=email]').value,
+      name: document.querySelector('[name=name]').value,
+      details: document.querySelector('[name=details]').value,
+      developmentTypes: selectedType,
+    }
+    if (grecaptcha) {
+      const recaptchaResponse = grecaptcha.getResponse();
+      if (recaptchaResponse.length === 0) {
+        alert("Lütfen robot olmadığınızı kanıtlayınız!");
+        return;
+      }
+    }
+
+    const res = await fetch('/api/action', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(json),
+    });
+
+    if (res.ok) {
+      toast({
+        title: "Başarılı",
+        description: "Mesajınız gönderildi",
+      })
+      setRenderKey(new Date().getTime())
+    } else {
+      toast({
+        title: "Sorun Oldu",
+        description: "Mesajınız gönderilirken bir sorun oluştu",
+        variant: 'destructive'
+      })
+    }
+  };
+
   return (
-    <>
+    <React.Fragment key={renderKey}>
       <CorporateContactJsonLd
         url="https://laodiceasolutions.com"
         logo="http://laodiceasolutions.com/logo.png"
@@ -74,7 +118,7 @@ export default function ContactUsForm() {
         ]}
         useAppDir={true}
       />
-      <form className={`${orbitron.className} flex flex-col justify-start items-start gap-5 whitespace-pre-wrap overflow-x-clip`} action={postContactUs}>
+      <form className={`${orbitron.className} flex flex-col justify-start items-start gap-5 whitespace-pre-wrap overflow-x-clip`} onSubmit={handleSubmit} >
         <h6 className={` text-[#3f3f3f] text-2xl md:text-3xl text-wrap text-center max-w-[90vw] pl-2 md:pl-0`}>{dictionary.landingPage.contactUs.WCDFY}</h6>
         <div className="grid grid-cols-12 gap-2 md:gap-10">
           <div className="col-span-full lg:col-span-6 flex flex-col justify-start items-center md:items-start gap-5">
@@ -126,20 +170,20 @@ export default function ContactUsForm() {
             <button
               type="submit"
               role="form"
-              className="px-8 py-4 border border-gray-200 rounded-3xl text-lg text-white hover:shadow-lg bg-secondary focus:bg-primary"
-              onClick={(e) => {
-                if (grecaptcha) {
-                  const recaptchaResponse = grecaptcha.getResponse();
-                  if (recaptchaResponse.length === 0) {
-                    alert("Please prove that you are not robots!");
-                    e.preventDefault();
-                    return;
-                  }
-                } else {
-                  e.preventDefault();
-                  return;
-                }
-              }}
+              className="px-8 py-4 border border-gray-200 rounded-3xl text-lg text-white hover:shadow-lg bg-laodicea-secondary focus:bg-laodicea-primary"
+            // onClick={(e) => {
+            //   if (grecaptcha) {
+            //     const recaptchaResponse = grecaptcha.getResponse();
+            //     if (recaptchaResponse.length === 0) {
+            //       alert("Please prove that you are not robots!");
+            //       e.preventDefault();
+            //       return;
+            //     }
+            //   } else {
+            //     e.preventDefault();
+            //     return;
+            //   }
+            // }}
             >
               <Image
                 src="/vectors/arrow-trape.svg"
@@ -165,6 +209,6 @@ export default function ContactUsForm() {
           </div>
         </div>
       </form>
-    </>
+    </React.Fragment>
   )
 }

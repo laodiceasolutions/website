@@ -12,7 +12,7 @@ export default function Page(params) {
       <span className="px-8 py-16 rounded-full border shadow-2xl border-gray-600 ">
         L
         {' '}
-        <span className="text-primary">
+        <span className="text-laodicea-primary">
           S
         </span>
       </span>
