@@ -27,7 +27,7 @@ export function Header(props) {
 
   return (
     <header
-      className={classNames('w-full z-50 transition ease-linear duration-700', {
+      className={classNames('w-full z-50 transition ease-linear duration-200', {
         'sticky top-0 shadow-xl': sticky || fixed,
         'absolute top-8 md:top-16': !sticky && !fixed,
       })}

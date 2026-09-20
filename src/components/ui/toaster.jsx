@@ -10,7 +10,7 @@ import {
   ToastViewport,
 } from "@/components/ui/toast"
 
-export function Toaster() {
+export function Toaster({ locale = "tr" }) {
   const { toasts } = useToast()
 
   return (
@@ -25,7 +25,7 @@ export function Toaster() {
               )}
             </div>
             {action}
-            <ToastClose />
+            <ToastClose aria-label={locale === "en" ? "Close notification" : "Bildirimi kapat"} />
           </Toast>)
         );
       })}

@@ -1,35 +1,23 @@
 'use client';
 
 import BlogHeader from "@/ui/blog/blogHeader";
+import { getBlogArticle, getBlogPublishDate } from "@/lib/content/blog.mjs";
 import useApplication from "@/ui/hooks/useApplication";
 import { whatCanDoWeDoOffers } from "@/utils/constants";
-import { ArticleJsonLd } from "next-seo";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function WebAndMobileClient(props) {
   const { dictionary, language } = useApplication();
+  const articleConfig = getBlogArticle('web-and-mobile');
 
   return (
     <>
-      <ArticleJsonLd
-        type="BlogPosting"
-        url={`https://laodiceasolutions.com/${language}/blog/what-we-can-do-for-you/web-and-mobile`}
-        title={dictionary.blog.WCDFY['web-and-mobile'].title}
-        images={[
-          "https://laodiceasolutions.com/blog/products/phone-and-tablet.jpeg"
-        ]}
-        datePublished="2024-09-12"
-        dateModified="2024-09-12"
-        authorName="@laodiceasoln"
-        description={dictionary.blog.WCDFY["web-and-mobile"].summary}
-        useAppDir={true}
-      />
       <article className="max-w-4xl mx-auto">
         <BlogHeader
           title={dictionary.blog.WCDFY['web-and-mobile'].title}
-          readTime={10}
-          publishDate={new Date(2024, 8, 12)}
+          readTime={articleConfig.readTime}
+          publishDate={getBlogPublishDate('web-and-mobile')}
         />
         <Image
           alt="Laodicea Solutions Mobile and Tablet development"

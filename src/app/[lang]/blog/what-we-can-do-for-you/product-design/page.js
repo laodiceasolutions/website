@@ -1,122 +1,22 @@
-import { getDictionary } from "@/app/[lang]/dictionaries";
+import JsonLd from "@/components/json-ld";
+import { getBlogArticle } from "@/lib/content/blog.mjs";
+import { blogPostingJsonLd, localizedMetadata } from "@/lib/seo/site.mjs";
+import { getDictionary } from "../../../dictionaries";
 import ProductDesignClient from "./page.product.design";
 
-const applicationUrl = process.env.APPLICATION_URL;
+const slug = "product-design";
+const articleConfig = getBlogArticle(slug);
 
 export async function generateMetadata({ params }) {
-  const { lang } = params;
-  const en = await getDictionary('en');
-  const tr = await getDictionary('tr');
-  const dictionary = {
-    en,
-    tr
-  }
-  const title = `${dictionary[lang ?? 'tr'].landingPage.project.WCDFY['product-design']}`;
-  const description = dictionary[lang ?? 'tr'].blog.WCDFY['product-design'].summary;
-  const metadata = {
-    tr: {
-      title,
-      description,
-      keywords: [
-        "ürün tasarımı",
-        "gömülü sistemler",
-        "strateji geliştirme",
-        "web uygulamaları",
-        "mobil uygulamalar",
-        "dijital dönüşüm",
-        "laodicea solutions projects",
-        "laodikya solution projeler",
-        "denizli yazılım",
-        "yazılım çözümleri",
-        "proje detayı",
-        "project detail",
-        "ürünlerimiz",
-        "yapabileceklerimiz"
-      ],
-      openGraph: {
-        type: 'website',
-        locale: 'tr_TR',
-        url: applicationUrl,
-        title,
-        description,
-        images: [
-          {
-            url: `${applicationUrl}/api/og`,
-            width: 1200,
-            height: 630,
-            alt: 'Laodicea Solutions Logo',
-          },
-        ],
-        site_name: 'Laodicea Solutions',
-      },
-      twitter: {
-        card: 'summary_large_image',
-        site: '@laodiceasoln',
-        title,
-        description,
-        image: `${applicationUrl}/api/og`,
-        creator: "@laodiceasoln",
-      },
-      robots: {
-        index: true,
-        follow: true,
-      },
-      canonical: applicationUrl,
-    },
-    en: {
-      title,
-      description,
-      keywords: [
-        "product design",
-        "embedded systems",
-        "ideation",
-        "strategy",
-        "web development",
-        "mobile development",
-        "digital transformation",
-        "laodicea solutions projects",
-        "laodikya solution projeler",
-        "products",
-        "what can we do for you",
-      ],
-      openGraph: {
-        type: 'website',
-        locale: 'en_US',
-        url: applicationUrl,
-        title,
-        description,
-        images: [
-          {
-            url: `${applicationUrl}/api/og?lang=en`,
-            width: 1200,
-            height: 630,
-            alt: 'Laodicea Solutions Logo',
-          },
-        ],
-        site_name: 'Laodicea Solutions',
-      },
-      twitter: {
-        card: 'summary_large_image',
-        site: '@laodiceasoln',
-        title,
-        description,
-        image: `${applicationUrl}/api/og?lang=en`,
-        creator: "@laodiceasoln",
-      },
-      robots: {
-        index: true,
-        follow: true,
-      },
-      canonical: applicationUrl,
-    }
-  };
-
-  return metadata[lang] || metadata.tr;
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+  const article = dictionary.blog.WCDFY[slug];
+  return localizedMetadata({ locale: lang, suffix: `blog/what-we-can-do-for-you/${slug}`, title: article.title, description: article.summary, type: "article" });
 }
 
-export default function Page(params) {
-
-  return (
-    <ProductDesignClient />
-  )
+export default async function Page({ params }) {
+  const { lang } = await params;
+  const dictionary = await getDictionary(lang);
+  const article = dictionary.blog.WCDFY[slug];
+  return <><JsonLd data={blogPostingJsonLd({ locale: lang, title: article.title, description: article.summary, ...articleConfig })} /><ProductDesignClient /></>;
 }

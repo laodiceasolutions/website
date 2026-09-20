@@ -2,32 +2,42 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
-    "dev": "NODE_OPTIONS='--inspect' next dev",
+    "dev": "next dev",
     "build": "next build",
+    "build:indexable": "node scripts/build-indexable.mjs",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "npm run build:indexable && node scripts/run-browser-tests.mjs",
+    "typecheck": "tsc -p jsconfig.seo.json",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
   "dependencies": {
-    "@next/third-parties": "^14.2.11",
     "@radix-ui/react-toast": "^1.2.4",
-    "@vercel/og": "^0.6.2",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.5.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.468.0",
-    "next": "14.2.5",
-    "next-seo": "^6.6.0",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sharp": "^0.35.4",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/typography": "^0.5.15",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "@types/node": "^26.5.0",
+    "cheerio": "^1.2.0",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.5",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.9.3"
   }
 }

@@ -9,12 +9,13 @@ export const metadata= {
   },
 }
 
-export default function Page(props) {
-  if (!props?.params?.id) {
+export default async function Page({ params }) {
+  const { id } = await params;
+  if (!id) {
     return notFound();
   }
 
-  const offer = whatCanDoWeDoOffers.find((offer) => offer.name === props.params.id);
+  const offer = whatCanDoWeDoOffers.find((offer) => offer.name === id);
   if (!offer) {
     return notFound();
   }

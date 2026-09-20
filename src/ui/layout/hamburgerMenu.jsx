@@ -1,58 +1,118 @@
 'use client';
+
+import { ApplicationContext } from "@/context/applicationContext";
 import { navbarItems } from "@/utils/constants";
 import Link from "next/link";
-import { useContext, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useContext, useEffect, useRef, useState } from "react";
 import { LanguageSelector } from "./languageSelector";
-import { ApplicationContext } from "@/context/applicationContext";
 
 export default function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const { dictionary, language } = useContext(ApplicationContext);
+  const triggerRef = useRef(null);
+  const closeRef = useRef(null);
+  const dialogRef = useRef(null);
+  const pathname = usePathname();
+  const drawerId = "mobile-navigation";
 
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const closeMenu = () => {
+    setIsOpen(false);
   };
+
+  useEffect(() => {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+    if (isOpen && !dialog.open) {
+      dialog.showModal();
+      closeRef.current?.focus();
+    } else if (!isOpen && dialog.open) {
+      dialog.close();
+      triggerRef.current?.focus();
+    }
+  }, [isOpen]);
 
   return (
     <>
       <button
-        data-collapse-toggle="navbar-default"
+        ref={triggerRef}
         type="button"
-        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-default" aria-expanded="false"
-        onClick={toggleMenu}>
-        <span className="sr-only">Open main menu</span>
-        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-gray-700 md:hidden hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-laodicea-secondary"
+        aria-controls={drawerId}
+        aria-expanded={isOpen}
+        aria-label={language === "en" ? "Open main menu" : "Ana menüyü aç"}
+        onClick={() => setIsOpen(true)}
+      >
+        <svg className="h-5 w-5" aria-hidden="true" viewBox="0 0 17 14" fill="none">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
         </svg>
       </button>
-      <div
-        className={`fixed inset-0 bg-black bg-opacity-50 z-10 transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}
-        onClick={toggleMenu}
-      ></div>
 
-      <div
-        className={`fixed top-0 right-0 w-2/3 h-full bg-white shadow-lg z-20 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}
+      <dialog
+        ref={dialogRef}
+        aria-label={language === "en" ? "Mobile navigation" : "Mobil navigasyon"}
+        className="mobile-menu-dialog fixed inset-0 z-20 m-0 h-full max-h-none w-full max-w-none bg-transparent p-0 md:hidden"
+        onKeyDown={(event) => {
+          if (event.key !== "Tab") return;
+          const focusable = [...event.currentTarget.querySelectorAll(
+            'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+          )].filter((element) => element.getClientRects().length > 0);
+          if (focusable.length === 0) return;
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }}
+        onCancel={(event) => {
+          event.preventDefault();
+          closeMenu();
+        }}
+        onClick={(event) => {
+          if (event.target === event.currentTarget) closeMenu();
+        }}
       >
-        <div className="flex flex-col items-center mt-2 divide-y divide-gray-200">
-          {
-            navbarItems.map((item) => (
+        <nav
+          id={drawerId}
+          aria-label={language === "en" ? "Mobile navigation" : "Mobil navigasyon"}
+          className="absolute right-0 top-0 h-full w-[min(85vw,24rem)] bg-white p-4 shadow-lg"
+        >
+          <div className="flex justify-end">
+          <button
+            ref={closeRef}
+            type="button"
+            onClick={closeMenu}
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-laodicea-secondary"
+            aria-label={language === "en" ? "Close main menu" : "Ana menüyü kapat"}
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+          </div>
+          <ul className="divide-y divide-gray-200">
+          {navbarItems.map((item) => {
+            const isCurrent = (item.label === "blog" && pathname.startsWith(`/${language}/blog`))
+              || (item.label === "projects" && pathname.startsWith(`/${language}/project`));
+            return <li key={item.label}>
               <Link
-                key={item.label}
                 href={`/${language}/${item.path}`}
-                className="text-xl hover:text-blue-600 w-full ml-2 py-4"
-                onClick={toggleMenu}>
+                aria-current={isCurrent ? "page" : undefined}
+                className={`block min-h-11 border-l-4 px-3 py-4 text-xl transition-colors hover:bg-gray-100 hover:text-[#147a3a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-laodicea-secondary ${isCurrent ? "border-[#147a3a] bg-green-50 text-[#147a3a]" : "border-transparent"}`}
+                onClick={closeMenu}
+              >
                 {dictionary.landingPage.header.navbar[item.label]}
               </Link>
-            ))
-          }
-        </div>
-        <div className="mt-5 p-2">
-          <LanguageSelector />
-        </div>
-      </div>
+            </li>;
+          })}
+          </ul>
+          <div className="mt-5 p-2">
+            <LanguageSelector />
+          </div>
+        </nav>
+      </dialog>
     </>
-  )
-};
+  );
+}

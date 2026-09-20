@@ -10,7 +10,7 @@ export default function PhotoGrid() {
           width={321}
           height={333}
           className=""
-          alt="Our collegues"
+          alt="Laodicea Solutions team"
         />
       </div>
       <div className="flex flex-col justify-center items-center gap-3 flex-[50%]">
@@ -19,14 +19,14 @@ export default function PhotoGrid() {
           width={321}
           height={333}
           className=""
-          alt="Our collegues"
+          alt=""
         />
         <Image
           src="/team/team-3.png"
           width={321}
           height={333}
           className=""
-          alt="Our collegues"
+          alt=""
         />
       </div>
       <div className="absolute -left-20 -bottom-12 border-2 border-dashed border-laodicea-primary rounded-full py-10 px-5">
@@ -35,7 +35,7 @@ export default function PhotoGrid() {
           width={118}
           height={118}
           className="z-20"
-          alt="Asteriks"
+          alt=""
         />
       </div>
     </div>
