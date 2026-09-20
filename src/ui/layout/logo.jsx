@@ -1,49 +1,21 @@
 'use client';
 
 import { ApplicationContext } from "@/context/applicationContext";
-import { LogoJsonLd } from "next-seo";
 import { Montserrat } from "next/font/google";
 import Link from "next/link";
 import { useContext } from "react";
 
-const montserrat = Montserrat({ subsets: ["latin"], weight: ['600',], style: "italic" });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["600"], style: "italic", display: "swap" });
 
-
-export default function Logo(props) {
-  const { useAsH1 } = props;
+export default function Logo() {
   const { language } = useContext(ApplicationContext);
   return (
-    <>
-      <LogoJsonLd
-        logo="https://laodiceasolutions.com/logo.png"
-        url="http://laodiceasolutions.com"
-        useAppDir={true}
-      />
       <Link
-        className={`${montserrat.className} text-2xl`}
+        className={`${montserrat.className} text-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-laodicea-secondary`}
         href={`/${language}`}
-        title="Brand"
+        aria-label="Laodicea Solutions"
       >
-        {
-          useAsH1 ? (
-            <h1>
-              Laodicea
-              {' '}
-              <span className="text-laodicea-primary">
-                Solutions
-              </span>
-            </h1>
-          ) : (
-            <>
-              Laodicea
-              {' '}
-              <span className="text-laodicea-primary">
-                Solutions
-              </span>
-            </>
-          )
-        }
+        Laodicea{" "}<span className="text-[#147a3a]">Solutions</span>
       </Link>
-    </>
   )
 }

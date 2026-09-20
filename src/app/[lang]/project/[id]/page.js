@@ -1,133 +1,38 @@
+import JsonLd from "@/components/json-ld";
+import { localizedMetadata, webPageJsonLd } from "@/lib/seo/site.mjs";
 import { projects } from "@/utils/constants";
 import { notFound } from "next/navigation";
-import PageClient from "./page.client";
 import { getDictionary } from "../../dictionaries";
+import PageClient from "./page.client";
 
-const applicationUrl = process.env.APPLICATION_URL;
-
-export async function generateMetadata({ params }) {
-  const { lang, id } = params;
-
-  const project = projects.find((pr) => pr.name == id);
-  const en = await getDictionary('en');
-  const tr = await getDictionary('tr');
-  const dictionary = {
-    en,
-    tr
-  }
-
-  const metadata = {
-    tr: {
-      title: `${dictionary[lang].landingPage.project[project.name]}`,
-      description: dictionary[lang].landingPage?.project[`${project.name}_Detail`],
-      keywords: [
-        project.name,
-        "laodicea solutions projects",
-        "laodikya solution projeler",
-        "denizli yazılım",
-        "yazılım çözümleri",
-        "proje detayı",
-        "project detail",
-        "dijital dönüşüm",
-        "crm",
-        "erp",
-        "muhasebe yazılımları",
-        "web uygulamaları",
-        "mobil uygulamalar"
-      ],
-      openGraph: {
-        type: 'website',
-        locale: 'tr_TR',
-        url: applicationUrl,
-        title: `Laodicea Solutions - ${dictionary[lang].landingPage?.project[project.name]}`,
-        description: dictionary[lang].landingPage?.project[`${project.name}_Detail`],
-        images: [
-          {
-            url: `${applicationUrl}/api/og`,
-            width: 1200,
-            height: 630,
-            alt: 'Laodicea Solutions Logo',
-          },
-        ],
-        site_name: 'Laodicea Solutions',
-      },
-      twitter: {
-        card: 'summary_large_image',
-        site: '@laodiceasoln',
-        title: `Laodicea Solutions - ${dictionary[lang].landingPage?.project[project.name]}`,
-        description: dictionary[lang].landingPage?.project[`${project.name}_Detail`],
-        image: `${applicationUrl}/api/og`,
-        creator: "@laodiceasoln",
-      },
-      robots: {
-        index: true,
-        follow: true,
-      },
-      canonical: applicationUrl,
-    },
-    en: {
-      title: `${dictionary[lang].landingPage?.project[project.name]}`,
-      description: dictionary[lang].landingPage?.project[`${project.name}_Detail`],
-      keywords: [
-        project.name,
-        "laodicea solutions projects",
-        "laodikya solution projeler",
-        "denizli yazılım",
-        "yazılım çözümleri",
-        "proje detayı",
-        "project detail",
-        "digital transformation",
-        "crm",
-        "erp",
-        "accounting software",
-        "web applications",
-        "mobile applications"
-      ],
-      openGraph: {
-        type: 'website',
-        locale: 'en_US',
-        url: applicationUrl,
-        title: `Laodicea Solutions - ${dictionary[lang].landingPage?.project[project.name]}`,
-        description: dictionary[lang].landingPage?.project[`${project.name}_Detail`],
-        images: [
-          {
-            url: `${applicationUrl}/api/og?lang=en`,
-            width: 1200,
-            height: 630,
-            alt: 'Laodicea Solutions Logo',
-          },
-        ],
-        site_name: 'Laodicea Solutions',
-      },
-      twitter: {
-        card: 'summary_large_image',
-        site: '@laodiceasoln',
-        title: `Laodicea Solutions - ${dictionary[lang].landingPage?.project[project.name]}`,
-        description: dictionary[lang].landingPage?.project[`${project.name}_Detail`],
-        image: `${applicationUrl}/api/og?lang=en`,
-        creator: "@laodiceasoln",
-      },
-      robots: {
-        index: true,
-        follow: true,
-      },
-      canonical: applicationUrl,
-    }
-  };
-
-  return metadata[lang] || metadata.tr;
+function findProject(id) {
+  return projects.find((project) => project.name === id);
 }
 
-export default function Page(props) {
-  const { params: {
-    id
-  } } = props;
-  const project = projects.find((pr) => pr.name === id);
-  if (!project) {
-    return notFound();
-  }
+export async function generateMetadata({ params }) {
+  const { lang, id } = await params;
+  const project = findProject(id);
+  if (!project) notFound();
+  const dictionary = await getDictionary(lang);
+  return localizedMetadata({
+    locale: lang,
+    suffix: `project/${id}`,
+    title: project.title,
+    description: dictionary.landingPage.project[`${project.name}_Detail`],
+  });
+}
 
+export default async function ProjectPage({ params }) {
+  const { lang, id } = await params;
+  const project = findProject(id);
+  if (!project) notFound();
+  const dictionary = await getDictionary(lang);
+  const title = project.title;
+  const description = dictionary.landingPage.project[`${project.name}_Detail`];
   return (
-    <PageClient project={project} />
-  )
+    <>
+      <JsonLd data={webPageJsonLd({ locale: lang, suffix: `project/${id}`, title, description })} />
+      <PageClient project={project} />
+    </>
+  );
 }

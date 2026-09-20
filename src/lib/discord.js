@@ -3,7 +3,8 @@ export default async function discordApiHandler(message) {
 
   const webhookUrl = process.env.DISCORD_WEBHOOK_URL; // Store your webhook URL in .env
 
-  try {
+  if (!webhookUrl) throw new Error("DISCORD_WEBHOOK_URL is not configured");
+
     const payload = {
       method: 'POST',
       headers: {
@@ -15,14 +16,11 @@ export default async function discordApiHandler(message) {
     };
     const response = await fetch(webhookUrl, payload);
 
-    if (response.ok) {
-      const result = await response.json();
-      return result;
-    } else {
+    if (!response.ok) {
       const resultMessage = await response.text();
-      return resultMessage;
+      throw new Error(`Discord webhook failed (${response.status}): ${resultMessage}`);
     }
-  } catch (error) {
-    return error;
-  }
+
+    if (response.status === 204) return { ok: true };
+    return response.json();
 }

@@ -9,18 +9,18 @@ export default function ContactUs() {
   const { dictionary } = useContext(ApplicationContext);
 
   return (
-    <section className="relative min-h-screen w-full bg-white flex justify-center mt-5" id="contactUs">
+    <section className="relative min-h-screen w-full scroll-mt-24 bg-white flex justify-center mt-5" id="contactUs">
        <div className="absolute left-0 -top-16 text-laodicea-primary">
         <Image
           src="/vectors/wave.svg"
           width={350}
           height={78}
           className="hidden md:block"
-          alt="wire"
+          alt=""
         />
       </div>
       <div className="p-5 container mx-auto  flex flex-col justify-start items-start gap-5">
-        <h2 className="text-5xl text-laodicea-secondary font-extrabold mt-6">{dictionary.landingPage.header.navbar.contactUs}</h2>
+        <h2 className="text-4xl md:text-5xl text-laodicea-secondary font-extrabold mt-6">{dictionary.landingPage.header.navbar.contactUs}</h2>
         <ContactUsForm />
       </div>
     </section>

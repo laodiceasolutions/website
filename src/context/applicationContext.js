@@ -1,7 +1,6 @@
 'use client';
 
-import { usePathname, useRouter } from "next/navigation";
-import { createContext, useEffect, useLayoutEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 
 const ApplicationContext = createContext({
@@ -10,21 +9,8 @@ const ApplicationContext = createContext({
   dictionary: {},
 });
 
-const ApplicationProvider = ({ children, dictionary }) => {
-
-  const pathname = usePathname();
-  const router = useRouter();
-  const [language, setLanguage] = useState('tr');
-
-  useLayoutEffect(() => {
-    if (pathname.startsWith('/en')) {
-      setLanguage('en');
-    } else if (pathname.length <= 1 || pathname.startsWith('/tr')) {
-      setLanguage('tr')
-    } else {
-      router.push('tr');
-    }
-  }, [pathname, router]);
+const ApplicationProvider = ({ children, dictionary, locale = 'tr' }) => {
+  const [language, setLanguage] = useState(locale);
 
 
   return (
